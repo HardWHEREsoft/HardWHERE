@@ -25,10 +25,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.15" level="application_server_libraries" />
-    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver:3.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.mongodb:bson:3.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:3.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:3.0.2" level="project" />
+    <orderEntry type="library" name="sdp.app.api-1.0.11-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:2.10.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.8.5" level="project" />
