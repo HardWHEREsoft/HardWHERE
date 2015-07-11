@@ -7,6 +7,17 @@
         <element id="directory" name="classes">
           <element id="module-output" name="HardWhere" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.8.5" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.8.5" />
+          <element id="library" level="project" name="Maven: org.mongodb:bson:3.0.2" />
+          <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver-core:3.0.2" />
+          <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver:3.0.2" />
+          <element id="library" level="project" name="Maven: cglib:cglib-nodep:2.2.2" />
+          <element id="library" level="project" name="Maven: com.thoughtworks.proxytoys:proxytoys:1.0" />
+          <element id="library" level="project" name="Maven: org.mongodb.morphia:morphia:1.0.1" />
+          <element id="library" level="project" name="Maven: org.mongodb:mongo-java-driver:3.0.2" />
+        </element>
       </element>
     </root>
   </artifact>

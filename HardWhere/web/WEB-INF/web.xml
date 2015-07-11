@@ -3,4 +3,34 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <context-param>
+        <param-name>MONGODB_HOST</param-name>
+        <param-value>localhost</param-value>
+    </context-param>
+    <context-param>
+        <param-name>MONGODB_PORT</param-name>
+        <param-value>27017</param-value>
+    </context-param>
+
+    <context-param>
+        <description>Location to store uploaded file</description>
+        <param-name>file-upload</param-name>
+        <param-value>
+            /Extra/Softwares/Web_DB_servers/apache-tomcat-8.0.15/webapps/data/
+        </param-value>
+    </context-param>
+
+
+    <servlet>
+        <servlet-name>AddItem</servlet-name>
+        <servlet-class>com.hardwhere.controller.servlets.AddItem</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddItem</servlet-name>
+        <url-pattern>/additem</url-pattern>
+    </servlet-mapping>
+
+
+
 </web-app>

@@ -16,6 +16,25 @@ public class Item_POJO {
     private String item_Price;
     private String item_Image;
     private String user;
+    private String user_id;
+
+    public String getItem_Type() {
+        return item_Type;
+    }
+
+    public void setItem_Type(String item_Type) {
+        this.item_Type = item_Type;
+    }
+
+    private String item_Type;
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
 
     public String getUser() {
         return user;
@@ -64,4 +83,6 @@ public class Item_POJO {
     public void setItem_Image(String item_Image) {
         this.item_Image = item_Image;
     }
+
+
 }
