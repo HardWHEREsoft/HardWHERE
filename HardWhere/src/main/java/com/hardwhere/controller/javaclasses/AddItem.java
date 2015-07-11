@@ -1,4 +1,4 @@
-package com.hardwhere.controller;
+package com.hardwhere.controller.javaclasses;
 
 /**
  * Created by menaka on 7/11/15.
