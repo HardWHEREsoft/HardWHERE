@@ -33,15 +33,15 @@ public class AddItem extends HttpServlet{
 
         InsertIntoDB iidb = new InsertIntoDB(item);
         System.out.println(iidb.toDBObject());
-//        MongoDBConnection mdbc = new MongoDBConnection(iidb.toJson());
-//        mdbc.createConnection();
-//        System.out.println(iidb.toJson());
-//        try {
-//            PrintWriter out = response.getWriter();
-//            out.print(mdbc.show());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        MongoDBConnection mdbc = new MongoDBConnection(iidb.toJson());
+        mdbc.createConnection();
+        System.out.println(iidb.toJson());
+        try {
+            PrintWriter out = response.getWriter();
+            out.print(mdbc.show());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
 //        mdbc.show();

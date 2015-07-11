@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/HardWHERE.iml" filepath="$PROJECT_DIR$/HardWHERE.iml" />
+=======
+>>>>>>> origin/master
       <module fileurl="file://$PROJECT_DIR$/HardWhere/HardWhere.iml" filepath="$PROJECT_DIR$/HardWhere/HardWhere.iml" />
     </modules>
   </component>
