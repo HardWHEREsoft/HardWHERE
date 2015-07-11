@@ -12,5 +12,6 @@
   </head>
   <body>
   <a href="additem.jsp">Add Items</a>
+  <a href="dashboard.jsp">Your Dashboard</a>
   </body>
 </html>

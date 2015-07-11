@@ -51,44 +51,7 @@ public class MongoDBConnection {
         DBCursor cursor = col.find();
         int i=1;
         while (cursor.hasNext()) {
-           s = s+"Inserted Document: "+i+"\n"+cursor.next();
-            System.out.println();
-            DBObject obj = cursor.next();
-            Mapper map = new Mapper();
-            map.fromDb(obj, pojo, new EntityCache() {
-                public Boolean exists(Key<?> key) {
-                    return null;
-                }
-
-                public void notifyExists(Key<?> key, boolean b) {
-
-                }
-
-                public <T> T getEntity(Key<T> key) {
-                    return null;
-                }
-
-                public <T> T getProxy(Key<T> key) {
-                    return null;
-                }
-
-                public <T> void putProxy(Key<T> key, T t) {
-
-                }
-
-                public <T> void putEntity(Key<T> key, T t) {
-
-                }
-
-                public void flush() {
-
-                }
-
-                public EntityCacheStatistics stats() {
-                    return null;
-                }
-            });
-            System.out.println(pojo.getItem_Name());
+           s = s+" \n Inserted Document: "+i+cursor.next();
             i++;
         }
         return s;
