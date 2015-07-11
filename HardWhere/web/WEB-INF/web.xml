@@ -31,6 +31,20 @@
         <url-pattern>/additem</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>moReceiver</servlet-name>
+        <servlet-class>hms.kite.samples.api.sms.MoSmsReceiver</servlet-class>
+        <init-param>
+            <param-name>smsReceiver</param-name>
+            <param-value>com.sms.sample.MoReceiver</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>moReceiver</servlet-name>
+        <url-pattern>/moReceiver</url-pattern>
+    </servlet-mapping>
+
 
 
 </web-app>
