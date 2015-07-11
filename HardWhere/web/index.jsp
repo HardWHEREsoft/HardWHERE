@@ -1,3 +1,6 @@
+<%@ page import="com.hardwhere.controller.servlets.Query" %>
+<%@ page import="com.hardwhere.model.Item_POJO" %>
+<%@ page import="java.util.ArrayList" %>
 <%--
   Created by IntelliJ IDEA.
   User: menaka
@@ -12,5 +15,35 @@
   </head>
   <body>
   <a href="additem.jsp">Add Items</a>
+  <form action="query" method="get">
+
+    <textarea name="search" rows="1" cols="50" onkeyup="showSuggestion(this.value)" ></textarea>
+
+    <input type="submit" value="search">
+
+  </form>
+  <div>
+    <%
+      ArrayList<Item_POJO> items;
+
+      items=new Query().getItemsByrPrice(request.getParameter("search"));
+      for(int i=0;i<items.size();i++){
+
+        out.println("-------------------------------------<br>");
+        out.println("name: "+items.get(i).getItem_Name());
+        out.println("Shop name: "+items.get(i).getUser());
+//        out.println("Contact: "+items.get(i).getContact());
+        out.println("Description: "+items.get(i).getItem_Description());
+        out.println("Image: "+items.get(i).getItem_Image());
+        out.println("Price: "+items.get(i).getItem_Price());
+//        out.println("District: "+items.get(i).getDistrict());
+        out.println("-------------------------------------<br>");
+      }
+
+    %>
+
+
+  </div>
+
   </body>
 </html>
