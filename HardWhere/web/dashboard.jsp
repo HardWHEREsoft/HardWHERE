@@ -9,6 +9,11 @@
 <html>
 <head>
   <title>User Dashboard</title>
+
+  <%
+    String s = (String)request.getAttribute("Message");
+  %>
+
 </head>
 <body>
 <div id="container">
@@ -17,6 +22,16 @@
     <div id="shop_image">Profile Image Goes here</div>
     <div id="profile_Content">
       <a href="additem.jsp">Add items to your shop</a>
+      <form action="dashboard" method="post">
+        <input type="submit" id="seeMyItems" name="See my items" value="See my items">
+      </form>
+      <div id="myItems">
+        <div id="myServices">
+          <%=s==null?"":s%>
+        </div>
+        <div id="myEquipments"></div>
+        <div id="myMaterials"></div>
+      </div>
     </div>
   </div>
 

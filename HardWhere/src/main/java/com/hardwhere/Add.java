@@ -16,7 +16,7 @@ public class Add {
         item.setItem_Image("D:/dfs");
 
         InsertIntoDB idb = new InsertIntoDB(item);
-        System.out.println(idb.toJson());;
+        System.out.println(idb.toJson());
     }
 
 }

@@ -40,6 +40,16 @@
         </init-param>
     </servlet>
 
+    <servlet>
+        <servlet-name>dashboard</servlet-name>
+        <servlet-class>com.hardwhere.controller.servlets.Dashboard</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>dashboard</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>moReceiver</servlet-name>
         <url-pattern>/moReceiver</url-pattern>
