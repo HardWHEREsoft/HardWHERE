@@ -51,4 +51,14 @@
         <url-pattern>/query</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Suggestion</servlet-name>
+        <servlet-class>com.sms.sample.sBox.SuggestionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Suggestion</servlet-name>
+        <url-pattern>/getHint</url-pattern>
+    </servlet-mapping>
+
 </web-app>

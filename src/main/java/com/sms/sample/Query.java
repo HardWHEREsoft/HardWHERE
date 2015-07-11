@@ -30,7 +30,7 @@ public class Query  extends HttpServlet {
         ArrayList<Items> reList=new ArrayList<>();
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         //Connect to database
-        DB db = mongo.getDB("consumerGoods");
+        DB db = mongo.getDB("HardWHERE");
 
         //Update Database
         DBCollection collection = db.getCollection("items");

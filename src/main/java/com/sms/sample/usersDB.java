@@ -12,14 +12,12 @@ import com.mongodb.*;
  */
 public class usersDB {
 
-    private String userName;
-    private String address;
 
     public void UpdateUserCollection(String name,String address,String applicationID,String message,String shopName) throws UnknownHostException {
 
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         //Connect to database
-        DB db = mongo.getDB("consumerGoods");
+        DB db = mongo.getDB("HardWHERE");
 
         //Update Database
         DBCollection collection = db.getCollection("messages");

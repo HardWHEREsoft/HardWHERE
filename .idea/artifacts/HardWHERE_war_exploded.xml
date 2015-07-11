@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HardWHERE:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/HardWHERE_war_exploded</output-path>
+    <root id="archive" name="HardWHERE_war exploded.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="HardWHERE" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.mongodb:mongo-java-driver:2.10.1" />
+          <element id="library" level="project" name="gson-1.7.2" />
+          <element id="library" level="project" name="sdp.app.api-1.0.11-SNAPSHOT" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="HardWHERE/web/Web" />
+    </root>
+  </artifact>
+</component>
