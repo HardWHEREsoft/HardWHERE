@@ -1,3 +1,5 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.hardwhere.model.Item_POJO" %>
 <%--
   Created by IntelliJ IDEA.
   User: menaka
@@ -11,7 +13,11 @@
   <title>User Dashboard</title>
 
   <%
-    String s = (String)request.getAttribute("Message");
+    String s = (String)request.getAttribute("services");
+    request.setAttribute("user_id", null);
+    ArrayList<Item_POJO> items = (ArrayList<Item_POJO>) request.getAttribute("items");
+    String d = "Hi";
+    System.out.println(d);
   %>
 
 </head>
@@ -27,7 +33,8 @@
       </form>
       <div id="myItems">
         <div id="myServices">
-          <%=s==null?"":s%>
+          <h4>My Services</h4>
+          <%=d%>
         </div>
         <div id="myEquipments"></div>
         <div id="myMaterials"></div>

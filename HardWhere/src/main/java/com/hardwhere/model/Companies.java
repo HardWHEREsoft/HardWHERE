@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class Companies {
     private ArrayList<Item_POJO> items = new ArrayList<Item_POJO>();
-    private String CpmpanyID;
+    private long CpmpanyID;
     private String company_Name;
     private String company_Address;
 

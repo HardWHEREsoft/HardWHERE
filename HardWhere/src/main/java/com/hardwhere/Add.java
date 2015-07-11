@@ -1,7 +1,11 @@
 package com.hardwhere;
 
-import com.hardwhere.controller.javaclasses.InsertIntoDB;
+import com.hardwhere.controller.javaclasses.ConvertToPOJO;
+import com.hardwhere.controller.javaclasses.MyItems;
 import com.hardwhere.model.Item_POJO;
+import com.mongodb.*;
+
+import java.util.ArrayList;
 
 /**
  * Created by menaka on 7/11/15.
@@ -9,14 +13,35 @@ import com.hardwhere.model.Item_POJO;
 public class Add {
 
 
-    public static void main(String args[]){
-        Item_POJO item = new Item_POJO();
-        item.setItem_Name("name");
-        item.setItem_Description("dsfsdf");
-        item.setItem_Image("D:/dfs");
+    public static void main(String args[]) throws Exception{
+        ConvertToPOJO cp;
+        Item_POJO item;
 
-        InsertIntoDB idb = new InsertIntoDB(item);
-        System.out.println(idb.toJson());
+        MongoClient mongo = new MongoClient( "localhost" , 27017 );
+        //Connect to database
+        DB db = mongo.getDB("HardWHERE");
+
+        //Update Database
+        DBCollection collection = db.getCollection("items");
+        System.out.println("connected to items");
+
+        BasicDBObject whereQuery = new BasicDBObject();
+       // whereQuery.put("item_Name", ItemName);
+        DBCursor cursor = collection.find();
+       // cursor.sort(new BasicDBObject("price ", -1));
+
+        while(cursor.hasNext()){
+            BasicDBObject obj = (BasicDBObject) cursor.next();
+            System.out.println(obj);
+            cp = new ConvertToPOJO(obj);
+            item = cp.convert();
+            System.out.println(item.getItem_Description() + item.getItem_ID() + item.getItem_Description());
+        }
+
+
+
+
+
     }
 
 }

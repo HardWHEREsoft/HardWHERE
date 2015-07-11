@@ -35,6 +35,7 @@ public class MongoDBConnection {
         }catch(Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         }
+        System.out.println(show());
     }
 
     public String show(){

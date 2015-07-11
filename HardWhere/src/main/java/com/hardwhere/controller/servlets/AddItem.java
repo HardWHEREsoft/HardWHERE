@@ -33,17 +33,18 @@ public class AddItem extends HttpServlet{
         item.setItem_Price(request.getParameter("item_price"));
         item.setItem_Image(request.getParameter("item_image"));
         item.setItem_Type(request.getParameter("item_Type"));
+//        item.setUser_id(request.getParameter(""));
 
         InsertIntoDB iidb = new InsertIntoDB(item);
         System.out.println(iidb.toDBObject());
-        MongoDBConnection mdbc = new MongoDBConnection(iidb.toJson());
+        MongoDBConnection mdbc = new MongoDBConnection();
         mdbc.createConnection();
         System.out.println(mdbc.show());
         try {
             RequestDispatcher rd = request.getRequestDispatcher("additem.jsp");
             String message = "Item added successfully";
             request.setAttribute("Result", message);
-            rd.include(request, response);
+//            rd.include(request, response);
             rd.forward(request, response);
 //            PrintWriter out = response.getWriter();
 //            out.print(mdbc.show());
@@ -54,7 +55,7 @@ public class AddItem extends HttpServlet{
         }
 
 
-//        mdbc.show();
+        mdbc.show();
     }
 
 }

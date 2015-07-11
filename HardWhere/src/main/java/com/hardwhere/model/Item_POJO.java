@@ -83,5 +83,10 @@ public class Item_POJO {
         this.item_Image = item_Image;
     }
 
+    public String print(){
+        return "Item Name: " + this.getItem_Name()+
+                "Item Description: " + this.getItem_Description()+
+                "Price: " + this.getItem_Price();
+    }
 
 }
