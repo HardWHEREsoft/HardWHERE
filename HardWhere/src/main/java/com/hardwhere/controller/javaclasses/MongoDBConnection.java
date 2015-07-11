@@ -13,11 +13,11 @@ import org.mongodb.morphia.mapping.cache.EntityCacheStatistics;
  */
 public class MongoDBConnection {
 
-    private MongoClient mongoClient;
+    private MongoClient client;
     private DB mongoDatabase;
-    private String record;
+    private DBObject record;
 
-    public MongoDBConnection(String record){
+    public MongoDBConnection(DBObject record){
         this.record = record;
 
     }
@@ -25,9 +25,9 @@ public class MongoDBConnection {
     public void createConnection(){
         try{
             // To connect to mongodb server
-            this. mongoClient = new MongoClient( "localhost" , 27017 );
+            this.client = new MongoClient( "localhost" , 27017 );
             // Now connect to your databases
-            this.mongoDatabase = mongoClient.getDB("HardWHERE");
+            this.mongoDatabase = client.getDB("HardWHERE");
             this.mongoDatabase.getCollection("items");
             System.out.println("Connect to database successfully");
             this.addItemtoDatabase();
@@ -38,10 +38,7 @@ public class MongoDBConnection {
 
     public void addItemtoDatabase(){
         DBCollection col = this.mongoDatabase.getCollection("items");
-        DBObject obj = (DBObject) JSON.parse(this.record);
-        col.insert(obj);
-
-
+        col.insert(this.record);
     }
 
     public String show(){
@@ -53,41 +50,8 @@ public class MongoDBConnection {
         while (cursor.hasNext()) {
            s = s+"Inserted Document: "+i+"\n"+cursor.next();
             System.out.println();
-            DBObject obj = cursor.next();
-            Mapper map = new Mapper();
-            map.fromDb(obj, pojo, new EntityCache() {
-                public Boolean exists(Key<?> key) {
-                    return null;
-                }
-
-                public void notifyExists(Key<?> key, boolean b) {
-
-                }
-
-                public <T> T getEntity(Key<T> key) {
-                    return null;
-                }
-
-                public <T> T getProxy(Key<T> key) {
-                    return null;
-                }
-
-                public <T> void putProxy(Key<T> key, T t) {
-
-                }
-
-                public <T> void putEntity(Key<T> key, T t) {
-
-                }
-
-                public void flush() {
-
-                }
-
-                public EntityCacheStatistics stats() {
-                    return null;
-                }
-            });
+//            DBObject obj = cursor.next();
+//            Mapper map = new Mapper();
             System.out.println(pojo.getItem_Name());
             i++;
         }
