@@ -17,7 +17,7 @@
   <a href="additem.jsp">Add Items</a>
   <form action="query" method="get">
 
-    <textarea name="search" rows="1" cols="50" onkeyup="showSuggestion(this.value)" ></textarea>
+    <input type="text" name="search" rows="1" cols="50" onkeyup="showSuggestion(this.value)" >
 
     <input type="submit" value="search">
 
