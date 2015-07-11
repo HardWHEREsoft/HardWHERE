@@ -46,7 +46,7 @@ public class Query  extends HttpServlet {
             String user=document.getString("user");
             String description=document.getString("item_Description");
             String image=document.getString("item_Image");
-            Double item_ID=document.getDouble("item_ID");
+            long item_ID=document.getLong("item_ID");
             String price=document.getString("item_Price");
             String item_Type=document.getString("item_Type");
             String item_Name=document.getString("item_Name");
