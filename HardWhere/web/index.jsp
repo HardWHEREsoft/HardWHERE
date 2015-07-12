@@ -22,7 +22,9 @@
     <input type="submit" value="search">
 
   </form>
-  <div>
+  
+      
+    <div>
     <%
       ArrayList<Item_POJO> items;
 
