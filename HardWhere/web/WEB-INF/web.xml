@@ -31,14 +31,14 @@
         <url-pattern>/additem</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet>-->
-        <!--<servlet-name>moReceiver</servlet-name>-->
-        <!--<servlet-class>hms.kite.samples.api.sms.MoSmsReceiver</servlet-class>-->
-        <!--<init-param>-->
-            <!--<param-name>smsReceiver</param-name>-->
-            <!--<param-value>com.sms.sample.MoReceiver</param-value>-->
-        <!--</init-param>-->
-    <!--</servlet>-->
+    <servlet>
+        <servlet-name>moReceiver</servlet-name>
+        <servlet-class>hms.kite.samples.api.sms.MoSmsReceiver</servlet-class>
+        <init-param>
+            <param-name>smsReceiver</param-name>
+            <param-value>com.sms.sample.MoReceiver</param-value>
+        </init-param>
+    </servlet>
 
     <servlet>
         <servlet-name>dashboard</servlet-name>
@@ -50,30 +50,30 @@
         <url-pattern>/dashboard</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>moReceiver</servlet-name>-->
-        <!--<url-pattern>/moReceiver</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>moReceiver</servlet-name>
+        <url-pattern>/moReceiver</url-pattern>
+    </servlet-mapping>
 
-    <!--<servlet>-->
-        <!--<servlet-name>UserMessages</servlet-name>-->
-        <!--<servlet-class>com.hardwhere.controller.servlets.UserMessages</servlet-class>-->
-    <!--</servlet>-->
+    <servlet>
+        <servlet-name>UserMessages</servlet-name>
+        <servlet-class>com.hardwhere.controller.servlets.UserMessages</servlet-class>
+    </servlet>
 
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>UserMessages</servlet-name>-->
-        <!--<url-pattern>/UserMessages</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>UserMessages</servlet-name>
+        <url-pattern>/UserMessages</url-pattern>
+    </servlet-mapping>
 
-    <!--<servlet>-->
-        <!--<servlet-name>sendMessage</servlet-name>-->
-        <!--<servlet-class>com.hardwhere.controller.servlets.sendMessage</servlet-class>-->
-    <!--</servlet>-->
+    <servlet>
+        <servlet-name>sendMessage</servlet-name>
+        <servlet-class>com.hardwhere.controller.servlets.sendMessage</servlet-class>
+    </servlet>
 
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>sendMessage</servlet-name>-->
-        <!--<url-pattern>/sendMessage</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>sendMessage</servlet-name>
+        <url-pattern>/sendMessage</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>Query</servlet-name>
@@ -93,6 +93,16 @@
     <servlet-mapping>
         <servlet-name>Registration</servlet-name>
         <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>com.hardwhere.controller.servlets.Login</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/loginPage</url-pattern>
     </servlet-mapping>
 
 </web-app>
