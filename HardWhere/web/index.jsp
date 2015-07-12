@@ -165,7 +165,7 @@
             //out.println("Image: "+items.get(i).getItem_Image());
             //        out.println("District: "+items.get(i).getDistrict());
             out.println("<div class=\"row\">"+"RS:"+items.get(i).getItem_Price()+"</div>");
-            out.println("<div class=\"row\">"+"shop name:"+items.get(i).getUser()+"</div>");
+            out.println("<div class=\"row\">"+"service:"+items.get(i).getItem_Type()+"</div>");
             out.println("</td>");
             out.println("</tr>");
           }
