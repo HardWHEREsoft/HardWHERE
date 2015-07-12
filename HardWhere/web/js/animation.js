@@ -2,6 +2,7 @@ function alertMe(){
     $(".show-hide").slideToggle();
 };
 
+
 $(function() {
     $(document).on('click', "#categories h4", function(e){
         $('#categories').find('.row').slideUp();
