@@ -9,6 +9,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
+<%
+
+  Item_POJO items;
+
+  items=new itemDetails().getItemsByrPrice(request.getParameter("item_id"));
+
+
+%>
 <head>
     <title>Item Details</title>
   <style type="text/css">
@@ -34,26 +43,18 @@
 
       function initialize() {
         var myLatlng = new google.maps.LatLng(latitude, longitude);
-        var mapOptions = { zoom: 15, center: myLatlng}
+        var mapOptions = { zoom: 17, center: myLatlng}
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
         var marker = new google.maps.Marker({ position: myLatlng, map: map, draggable:true, title:"Drag me!"});}
       google.maps.event.addDomListener(window, 'load', initialize);
     }
+    homeMap("matale");
   </script>
 </head>
 <body>
 
-  <%
+  <div id="map-canvas" style="width:500px;height:380px;">
 
-    Item_POJO items;
-
-    items=new itemDetails().getItemsByrPrice(request.getParameter("item_id"));
-
-
-  %>
-  <script>
-    homeMap(<%=items.getItem_ID()%>>);
-  </script>
-
+  </div>
 </body>
 </html>
