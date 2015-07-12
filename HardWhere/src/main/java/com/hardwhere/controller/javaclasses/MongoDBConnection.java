@@ -22,6 +22,8 @@ public class MongoDBConnection {
 
     }
 
+    public MongoDBConnection(){}
+
     public void createConnection(){
         try{
             // To connect to mongodb server
@@ -30,18 +32,10 @@ public class MongoDBConnection {
             this.mongoDatabase = mongoClient.getDB("HardWHERE");
             this.mongoDatabase.getCollection("items");
             System.out.println("Connect to database successfully");
-            this.addItemtoDatabase();
         }catch(Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         }
-    }
-
-    public void addItemtoDatabase(){
-        DBCollection col = this.mongoDatabase.getCollection("items");
-        DBObject obj = (DBObject) JSON.parse(this.record);
-        col.insert(obj);
-
-
+        System.out.println(show());
     }
 
     public String show(){

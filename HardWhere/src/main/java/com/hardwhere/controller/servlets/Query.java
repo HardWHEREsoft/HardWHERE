@@ -27,7 +27,7 @@ public class Query  extends HttpServlet {
 
     public ArrayList<Item_POJO> getItemsByrPrice(String ItemName) throws UnknownHostException {
 
-        ArrayList<Item_POJO> reList=new ArrayList<>();
+        ArrayList<Item_POJO> reList=new ArrayList<Item_POJO>();
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         //Connect to database
         DB db = mongo.getDB("HardWHERE");

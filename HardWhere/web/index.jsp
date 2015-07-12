@@ -17,7 +17,7 @@
   <a href="additem.jsp">Add Items</a>
   <form action="query" method="get">
 
-    <textarea name="search" rows="1" cols="50" onkeyup="showSuggestion(this.value)" ></textarea>
+    <input type="text" name="search" rows="1" cols="50" onkeyup="showSuggestion(this.value)" >
 
     <input type="submit" value="search">
 
@@ -28,7 +28,6 @@
 
       items=new Query().getItemsByrPrice(request.getParameter("search"));
       for(int i=0;i<items.size();i++){
-
         out.println("-------------------------------------<br>");
         out.println("name: ");
         out.println("<a href=\"item?item_id="+items.get(i).getItem_ID()+"\""+">"+items.get(i).getItem_Name()+" </a>");

@@ -2,7 +2,6 @@ package com.hardwhere.controller.javaclasses;
 
 import com.hardwhere.model.Item_POJO;
 import com.mongodb.DBObject;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.mongodb.morphia.mapping.Mapper;
 
 /**
@@ -15,16 +14,6 @@ public class InsertIntoDB{
     public InsertIntoDB(Item_POJO item){
 
         this.item = item;
-    }
-
-    public String toJson(){
-        ObjectMapper mapper = new ObjectMapper();
-        try{
-            return mapper.writeValueAsString(item);
-
-        }catch(Exception e){
-            return "Error";
-        }
     }
 
     public DBObject toDBObject(){
