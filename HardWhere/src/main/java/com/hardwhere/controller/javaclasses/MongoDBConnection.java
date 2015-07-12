@@ -8,14 +8,15 @@ import org.mongodb.morphia.mapping.Mapper;
 import org.mongodb.morphia.mapping.cache.EntityCache;
 import org.mongodb.morphia.mapping.cache.EntityCacheStatistics;
 
+import java.net.UnknownHostException;
+
 /**
  * Created by menaka on 7/11/15.
  */
 public class MongoDBConnection {
 
-    private MongoClient mongoClient;
-    private DB mongoDatabase;
-    private DBCollection col;
+
+
     private String record;
 
     public MongoDBConnection(String record){
@@ -28,27 +29,42 @@ public class MongoDBConnection {
     public void createConnection(String name){
         try{
             // To connect to mongodb server
-            this. mongoClient = new MongoClient( "localhost" , 27017 );
+            MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
             // Now connect to your databases
-            this.mongoDatabase = mongoClient.getDB("HardWHERE");
-            if(mongoDatabase.getCollection(name)==null){
-                col = mongoDatabase.createCollection(name, null);
-                System.out.println(col);
-            }
-            System.out.println("Connect to database successfully");
+            DB mongoDatabase = mongoClient.getDB("HardWHERE");
+            mongoDatabase.getCollection(name);
+            System.out.println("Connect to database successfully"+" "+name);
         }catch(Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         }
-        System.out.println(show());
+        //System.out.println(show());
     }
 
     public void insertin(BasicDBObject obj){
-        this.col.insert(obj);
+        MongoClient mongoClient = null;
+        try {
+            mongoClient = new MongoClient( "localhost" , 27017 );
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        // Now connect to your databases
+        DB mongoDatabase = mongoClient.getDB("HardWHERE");
+        DBCollection col=mongoDatabase.getCollection("items");
+
+        col.insert(obj);
     }
 
-    public String show(){
+    public String show()  {
         String s = "";
-        DBCollection col = this.mongoDatabase.getCollection("items");
+        MongoClient mongoClient = null;
+        try {
+            mongoClient = new MongoClient( "localhost" , 27017 );
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        // Now connect to your databases
+        DB mongoDatabase = mongoClient.getDB("HardWHERE");
+        DBCollection col=mongoDatabase.getCollection("items");
         Item_POJO pojo = new Item_POJO();
         DBCursor cursor = col.find();
         int i=1;
@@ -60,6 +76,15 @@ public class MongoDBConnection {
     }
 
     public boolean check(String username){
+
+        MongoClient mongoClient = null;
+        try {
+            mongoClient = new MongoClient( "localhost" , 27017 );
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        // Now connect to your databases
+        DB mongoDatabase = mongoClient.getDB("HardWHERE");
         DBCollection coll = mongoDatabase.getCollection("companies");
 
         DBObject query = new BasicDBObject("username", username);
