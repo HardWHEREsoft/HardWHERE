@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class Query  extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(request.getParameter("search"));
+
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
@@ -46,7 +46,7 @@ public class Query  extends HttpServlet {
             String user=document.getString("user");
             String description=document.getString("item_Description");
             String image=document.getString("item_Image");
-            long item_ID=document.getLong("item_ID");
+            String item_ID=document.getString("item_ID");
             String price=document.getString("item_Price");
             String item_Type=document.getString("item_Type");
             String item_Name=document.getString("item_Name");

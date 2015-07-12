@@ -10,7 +10,7 @@ package com.hardwhere.model;
 
 public class Item_POJO {
 
-    private long item_ID;
+    private String item_ID;
     private String item_Name;
     private String item_Description;
     private String item_Price;
@@ -43,11 +43,11 @@ public class Item_POJO {
         this.user = user;
     }
 
-    public long getItem_ID() {
+    public String getItem_ID() {
         return item_ID;
     }
 
-    public void setItem_ID(long item_ID) {
+    public void setItem_ID(String item_ID) {
         this.item_ID = item_ID;
     }
 
