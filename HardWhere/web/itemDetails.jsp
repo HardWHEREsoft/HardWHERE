@@ -19,7 +19,13 @@
 
 %>
 <head>
-    <title>Item Details</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/typeahead.bundle.js"></script>
+  <script type="text/javascript" src="js/animation.js"></script>
+  <title>HardWHERE</title>
   <style type="text/css">
     html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
   </style>
@@ -27,6 +33,7 @@
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
   <script type="text/javascript">
+
 
     function homeMap(address){
       var latitude = 0;
@@ -51,10 +58,48 @@
     homeMap("matale");
   </script>
 </head>
-<body>
+<body id="page-top" class="index">
 
-  <div id="map-canvas" style="width:500px;height:380px;">
 
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <h1 class="col-md-6">HardWHERE.lk</h1>
+      </div>
+    </nav>
+
+    <section class="div_padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <table class="table table-striped">
+              <tbody>
+              <tr><td>Item Name</td></tr>
+              <tr><td>Address</td></tr>
+              <tr><td>Service</td></tr>
+              <tr><td>Shop Name</td></tr>
+              <tr><td>Contact</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-8"><h3>Position</h3>
+            <div id="map-canvas" style="width:500px;height:380px;">
+          </div>
+        </div>
+
+        <div class="row  text-center" style="margin-bottom:30px">
+          <button id="callBtn" class="btn btn-default">Call</button>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="text-center">
+        <div class="row top">Contact Us</div>
+        <div class="row bottom">copyrights &copy; HardWhereSoft</div>
+      </div>
+
+    </footer>
   </div>
 </body>
 </html>
