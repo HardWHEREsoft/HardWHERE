@@ -50,9 +50,9 @@ public class AddItem extends HttpServlet{
 //        item.setUser_id(request.getParameter(""));
 
         InsertIntoDB iidb = new InsertIntoDB(item);
-        System.out.println(iidb.toDBObject());
+//        System.out.println(iidb.toDBObject());
         MongoDBConnection mdbc = new MongoDBConnection();
-        mdbc.createConnection();
+        mdbc.createConnection("items");
 //        System.out.println(mdbc.show());
         fileUplod(request);
         try {
