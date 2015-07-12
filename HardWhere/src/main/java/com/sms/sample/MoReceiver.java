@@ -79,13 +79,15 @@ public class MoReceiver implements MoSmsListener
         }
 
         mtSmsReq.setApplicationId(moSmsReq.getApplicationId());
-        mtSmsReq.setPassword("password");
+//        mtSmsReq.setPassword("password");
+        mtSmsReq.setPassword("027963e9b53d3e9297b99f7a66fb6d2f");
         mtSmsReq.setDestinationAddresses(Arrays.asList(moSmsReq.getSourceAddress()));
 
         try
         {
             //connect to database
-            requestSender = new SmsRequestSender(new URL("http://localhost:7000/sms/send"));
+//            requestSender = new SmsRequestSender(new URL("http://localhost:7000/sms/send"));
+            requestSender = new SmsRequestSender(new URL("https://api.dialog.lk/sms/send"));
             requestSender.sendSmsRequest(mtSmsReq);
             MessagesDB users=new MessagesDB();
             users.UpdateUserCollection(messages[0],moSmsReq.getSourceAddress(),moSmsReq.getApplicationId(),messages[2],messages[1]);

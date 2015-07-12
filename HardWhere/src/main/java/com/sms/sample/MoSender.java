@@ -35,14 +35,14 @@ public class MoSender implements MoSmsListener {
         MtSmsReq mtSmsReq = new MtSmsReq();
         mtSmsReq.setMessage(responseMessage);
         mtSmsReq.setApplicationId(applicationID);
-//        mtSmsReq.setPassword("027963e9b53d3e9297b99f7a66fb6d2f");
-        mtSmsReq.setPassword("password");
+        mtSmsReq.setPassword("027963e9b53d3e9297b99f7a66fb6d2f");
+//        mtSmsReq.setPassword("password");
         mtSmsReq.setDestinationAddresses(Arrays.asList(address));
 
         try
         {
-//            requestSender = new SmsRequestSender(new URL("https://api.dialog.lk/sms/send"));
-            requestSender = new SmsRequestSender(new URL("http://localhost:7000/sms/send"));
+            requestSender = new SmsRequestSender(new URL("https://api.dialog.lk/sms/send"));
+//            requestSender = new SmsRequestSender(new URL("http://localhost:7000/sms/send"));
             requestSender.sendSmsRequest(mtSmsReq);
             System.out.println("sent");
         }

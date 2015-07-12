@@ -53,12 +53,13 @@
                 out.println("<div class=\"row\"><p>"+list.get(j)+"</p></div>");
               }
               out.println("<div class=\"row\">");
-              out.println("<form method=\"post\" method=\"sendMessage\" class=\"form-group\">");
-              out.println("<div class=\"row\"><textarea class=\"form-control\" rows=\"3\" spellcheck=\"true\" placeholder=\"Reply\"></textarea>");
+              out.println("<form method=\"get\" action=\"sendMessage\" class=\"form-group\">");
+
               out.println("<div class=\"row text-right\" style=\"padding-top: 15px\">");
+              out.println("<div class=\"row\"><input type=\"text\" class=\"form-control\" name=\"message\" rows=\"3\" spellcheck=\"true\" placeholder=\"Reply\">");
               out.println("<input type=\"submit\" class=\"btn btn-defaul\" value=\"reply\">");
-              out.println("<input type=\"hidden\" name=\"address\" value="+messageList.get(i).getAddress()+">");
-              out.println("<input type=\"hidden\" name=\"applicationID\" value="+messageList.get(i).getAppID()+">");
+              out.println("<input type=\"hidden\" name=\"address\" value="+"\""+messageList.get(i).getAddress()+"\""+">");
+              out.println("<input type=\"hidden\" name=\"applicationID\" value="+"\""+messageList.get(i).getAppID()+"\""+">");
               out.println("</div>");
               out.println("</form>");
               out.println("</div>");
