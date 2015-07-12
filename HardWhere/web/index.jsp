@@ -30,14 +30,15 @@
       for(int i=0;i<items.size();i++){
 
         out.println("-------------------------------------<br>");
-        out.println("name: "+items.get(i).getItem_Name());
+        out.println("name: ");
+        out.println("<a href=\"item?item_id="+items.get(i).getItem_ID()+"\""+">"+items.get(i).getItem_Name()+" </a>");
         out.println("Shop name: "+items.get(i).getUser());
 //        out.println("Contact: "+items.get(i).getContact());
         out.println("Description: "+items.get(i).getItem_Description());
         out.println("Image: "+items.get(i).getItem_Image());
         out.println("Price: "+items.get(i).getItem_Price());
 //        out.println("District: "+items.get(i).getDistrict());
-        out.println("-------------------------------------<br>");
+          out.println(" <div>");
       }
 
     %>

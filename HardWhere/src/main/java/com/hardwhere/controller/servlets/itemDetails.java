@@ -12,13 +12,12 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 /**
- * Created by Ehelepola on 09/07/2015.
+ * Created by Ehelepola on 12/07/2015.
  */
-
-public class Query  extends HttpServlet {
+public class itemDetails  extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("itemDetails.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -65,5 +64,4 @@ public class Query  extends HttpServlet {
 
         return reList;
     }
-
 }

@@ -102,4 +102,15 @@
         <url-pattern>/loginPage</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>item</servlet-name>
+        <servlet-class>com.hardwhere.controller.servlets.itemDetails</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>item</servlet-name>
+        <url-pattern>/item</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
