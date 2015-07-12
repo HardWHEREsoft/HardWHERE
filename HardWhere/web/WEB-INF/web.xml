@@ -94,6 +94,16 @@
         <servlet-name>Registration</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>com.hardwhere.controller.servlets.Login</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/loginPage</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>item</servlet-name>

@@ -17,6 +17,8 @@
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/typeahead.bundle.js"></script>
   <script type="text/javascript" src="js/animation.js"></script>
+
+
   <title>HardWHERE</title>
 
 </head>
@@ -27,10 +29,11 @@
   <div class="container-fluid">
     <h1 class="col-md-6">HardWHERE.lk</h1>
 
-    <form class="navbar-form navbar-right col-md-6" role="search">
+    <form class="navbar-form navbar-right col-md-6" role="search" method="post" action="loginPage">
+
       <div class="form-group">
-        <input type="text" class="form-control input-sm" placeholder="E-mail">
-        <input type="password" class="form-control input-sm" placeholder="Password">
+        <input type="text" class="form-control input-sm" placeholder="E-mail" name="username">
+        <input type="password" class="form-control input-sm" placeholder="Password" name="password">
       </div>
       <button type="submit" class="btn btn-sm">login</button>
     </form>
@@ -39,7 +42,7 @@
 
 <section class="div_padding">
   <div class="container text-center">
-    <h4>Have you not registered yet? <a href="">SignUp Here Now</a></h4>
+    <h4>Have you not registered yet? <a href="registration.jsp">SignUp Here Now</a></h4>
   </div>
   <hr>
 </section>
@@ -68,7 +71,7 @@
 
             <form action="query" method="get">
               <div class="col-md-6">
-                <label for="seach">
+                <label for="search">
                   <input id="search" name="search" type="search" style="width:120%" class="form-control input-md col-md-4" placeholder="search item">
                 </label>
               </div>
