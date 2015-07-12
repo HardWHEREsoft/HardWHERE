@@ -13,8 +13,9 @@
   <head>
     <title>HardWHERE</title>
   </head>
-  <body>
-  <a href="additem.jsp">Add Items</a>
+  <br>
+  <a href="additem.jsp">Add Items</a> <br>
+  <a href="registration.jsp">Register</a>
   <form action="query" method="get">
 
     <input type="text" name="search" rows="1" cols="50" onkeyup="showSuggestion(this.value)" >

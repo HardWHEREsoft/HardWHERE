@@ -15,7 +15,7 @@
 <body>
 <h1>Registration </h1>
 
-<form name="frm1" action="enterData" method="POST">
+<form name="frm1" action="register" method="POST">
 
   <table>
     <tr><td>Name: </td><td><input type="text" name="name" value="" size="100" /></td></tr>
@@ -23,6 +23,7 @@
     <tr><td>Address2: </td><td><input type="text" name="address2" value="" size="100" /></td></tr>
     <tr><td>Address3: </td><td><input type="text" name="address3" value="" size="100" /></td></tr>
     <tr><td>District: </td><td><input type="text" name="district" value="" size="100" /></td></tr>
+    <tr><td>Postal Code: </td><td><input type="text" name="postal" value="" id="postcode"></td></tr>
     <tr><td>Tel: </td><td><input type="text" name="tel" value="" size="100" /></td></tr>
     <tr><td>Email: </td><td><input type="text" name="email" value="" size="100" /></td></tr>
 

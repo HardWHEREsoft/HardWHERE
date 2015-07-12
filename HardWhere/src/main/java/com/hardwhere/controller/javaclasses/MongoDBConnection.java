@@ -15,6 +15,7 @@ public class MongoDBConnection {
 
     private MongoClient mongoClient;
     private DB mongoDatabase;
+    private DBCollection col;
     private String record;
 
     public MongoDBConnection(String record){
@@ -24,18 +25,25 @@ public class MongoDBConnection {
 
     public MongoDBConnection(){}
 
-    public void createConnection(){
+    public void createConnection(String name){
         try{
             // To connect to mongodb server
             this. mongoClient = new MongoClient( "localhost" , 27017 );
             // Now connect to your databases
             this.mongoDatabase = mongoClient.getDB("HardWHERE");
-            this.mongoDatabase.getCollection("items");
+            if(mongoDatabase.getCollection(name)==null){
+                col = mongoDatabase.createCollection(name, null);
+                System.out.println(col);
+            }
             System.out.println("Connect to database successfully");
         }catch(Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
         }
         System.out.println(show());
+    }
+
+    public void insertin(BasicDBObject obj){
+        this.col.insert(obj);
     }
 
     public String show(){
@@ -49,6 +57,23 @@ public class MongoDBConnection {
             i++;
         }
         return s;
+    }
+
+    public boolean check(String username){
+        DBCollection coll = mongoDatabase.getCollection("companies");
+
+        DBObject query = new BasicDBObject("username", username);
+        DBCursor cursor = coll.find(query);
+
+
+        if(cursor.hasNext()){
+            return false;
+
+        }else{
+            return true;
+        }
+
+
     }
 
 }

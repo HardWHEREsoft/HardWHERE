@@ -84,7 +84,15 @@
         <servlet-name>Query</servlet-name>
         <url-pattern>/query</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Registration</servlet-name>
+        <servlet-class>com.hardwhere.controller.servlets.Register</servlet-class>
+    </servlet>
 
-
+    <servlet-mapping>
+        <servlet-name>Registration</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
 
 </web-app>

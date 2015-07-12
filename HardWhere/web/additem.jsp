@@ -33,7 +33,6 @@
           <option>Equipment</option>
         </select></td></tr>
         <tr><td>Item Price: </td><td><input type="text" name="item_price" id="itemPrice"></td></tr>
-        <tr><td>Availability: </td><td><input type=""></td></tr>
         <tr><td>Item Image: </td><td><input type="file" name="file" size="50"></td></tr>
         <tr><td></td><td><input type="submit" value="Add Item"></td></tr>
       </table>

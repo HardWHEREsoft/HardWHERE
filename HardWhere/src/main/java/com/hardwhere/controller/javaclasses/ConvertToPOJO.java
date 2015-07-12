@@ -1,6 +1,7 @@
 package com.hardwhere.controller.javaclasses;
 
 import com.google.gson.Gson;
+import com.hardwhere.model.Companies;
 import com.hardwhere.model.Item_POJO;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
@@ -24,4 +25,13 @@ public class ConvertToPOJO {
 
         return pojo;
     }
+
+    public Companies convertCom(){
+        String json = this.object.toString();
+        Gson gson = new Gson();
+        Companies comp = gson.fromJson(json, Companies.class);
+        return comp;
+    }
+
+
 }
