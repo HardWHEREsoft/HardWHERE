@@ -23,7 +23,7 @@
     <%=message==null?"":message%>
   </div>
   <div id="form">
-    <form id="addItemForm" action="additem" method="post" enctype="multipart/form-data">
+    <form id="addItemForm" action="additem" method="post">
       <table id="formTable">
         <tr><td>Item Name: </td> <td><input type="text" name="item_Name" id="itemName"></td></tr>
         <tr><td>Item Description: </td><td><textarea id="itemDescription" name="item_description" rows="10" cols="20"></textarea></td></tr>

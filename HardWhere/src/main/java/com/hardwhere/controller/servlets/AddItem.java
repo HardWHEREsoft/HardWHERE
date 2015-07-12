@@ -6,6 +6,10 @@ package com.hardwhere.controller.servlets;
 import com.hardwhere.controller.javaclasses.InsertIntoDB;
 import com.hardwhere.controller.javaclasses.MongoDBConnection;
 import com.hardwhere.model.Item_POJO;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.MongoClient;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -22,6 +26,7 @@ import java.io.*;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.net.UnknownHostException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -49,12 +54,36 @@ public class AddItem extends HttpServlet{
         item.setItem_Type(request.getParameter("item_Type"));
 //        item.setUser_id(request.getParameter(""));
 
-        InsertIntoDB iidb = new InsertIntoDB(item);
-//        System.out.println(iidb.toDBObject());
-        MongoDBConnection mdbc = new MongoDBConnection();
-        mdbc.createConnection("items");
+//        InsertIntoDB iidb = new InsertIntoDB(item);
+////        System.out.println(iidb.toDBObject());
+//        MongoDBConnection mdbc = new MongoDBConnection();
+//        mdbc.createConnection("items");
+//        mdbc.insertin((BasicDBObject)iidb.toDBObject("itemPojo"));
 //        System.out.println(mdbc.show());
-        fileUplod(request);
+//        fileUplod(request);
+
+        BasicDBObject document = new BasicDBObject();
+        System.out.println(request.getParameter("item_Type"));
+        document.put("item_Type", request.getParameter("item_Type"));
+//        document.put("user_id", item.getCompany_id());
+        document.put("item_Image", request.getParameter("item_image"));
+        document.put("item_Price", request.getParameter("item_price"));
+        document.put("item_ID", item.getItem_ID());
+        document.put("user", item.getUser());
+        document.put("item_Name", request.getParameter("item_Name"));
+        document.put("item_Description", request.getParameter("item_description"));
+
+
+        MongoClient mongoClient = null;
+        try {
+            mongoClient = new MongoClient( "localhost" , 27017 );
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        DB mongoDatabase = mongoClient.getDB("HardWHERE");
+        DBCollection col=mongoDatabase.getCollection("items");
+        col.insert(document);
+
         try {
             RequestDispatcher rd = request.getRequestDispatcher("additem.jsp");
             String message = "Item added successfully";
@@ -70,7 +99,7 @@ public class AddItem extends HttpServlet{
         }
 
 
-        mdbc.show();
+        //mdbc.show();
     }
 
 
