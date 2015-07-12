@@ -85,6 +85,32 @@
         <url-pattern>/query</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>enterData</servlet-name>
+        <servlet-class>com.hardwhere.controller.javaclasses.enterData</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>loginPage</servlet-name>
+        <servlet-class>com.hardwhere.controller.javaclasses.loginPage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>enterData</servlet-name>
+        <url-pattern>/enterData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loginPage</servlet-name>
+        <url-pattern>/loginPage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>item</servlet-name>
+        <servlet-class>com.hardwhere.controller.servlets.itemDetails</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>item</servlet-name>
+        <url-pattern>/item</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>
