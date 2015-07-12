@@ -54,14 +54,17 @@
                  </div>
                 
                  <div class="col-md-6 text-inline">
-                     <div class="col-md-6">
-                        <label for="seach">
-                            <input id="search" type="search" style="width:120%" class="form-control input-md col-md-4" placeholder="search item">    
-                        </label>
+
+                        <form action="query" method="get">
+                            <div class="col-md-6">
+                                <label for="seach">
+                                    <input id="search" name="search" type="search" style="width:120%" class="form-control input-md col-md-4" placeholder="search item">
+                                </label>
+                            </div>
+                     <div class="mol-md-4">
+                         <input type="submit" class="btn btn-default">Search</button>
                      </div>
-                    <div class="mol-md-4">
-                            <button type="button" class="btn btn-default">Search</button> 
-                     </div>
+                        </form>
                  </div>
                  
                 </div>       
@@ -143,22 +146,28 @@
                             <div class="row">12.75</div>
                         </td> 
                     </tr>
+
+                    <%
+                        ArrayList<Item_POJO> items;
+
+                        items=new Query().getItemsByrPrice(request.getParameter("search"));
+                        for(int i=0;i<items.size();i++){
+                        out.println("<tr>");
+                            out.println("<td class=\"col-md-2 img-item\"><img class=\"img-responsive\" src=\"img/profilePic.png\"></td>");
+                            //out.println("<a href=\"item?item_id="+items.get(i).getItem_ID()+"\""+">"+items.get(i).getItem_Name()+" </a>");
+                            out.println("<td>");
+                                out.println("<div class=\"row\">"+"<a href=\"item?item_id="+items.get(i).getItem_ID()+"\""+">"+items.get(i).getItem_Description()+" </a>"+"</div>");
+
+                                //out.println("Image: "+items.get(i).getItem_Image());
+                                //        out.println("District: "+items.get(i).getDistrict());
+                                out.println("<div class=\"row\">"+"RS:"+items.get(i).getItem_Price()+"</div>");
+                                out.println("<div class=\"row\">"+"shop name:"+items.get(i).getUser()+"</div>");
+                                out.println("</td>");
+                            out.println("</tr>");
+                        }
+                    %>
                     
-                    <tr>
-                        <td class="col-md-2 img-item"><img class="img-responsive" src="img/3D-Morning-Dew-HD-Wallpaper.jpg"></td>
-                        <td>
-                            <div class="row">Description Irunika Lakmal Weeraratne</div>
-                            <div class="row">12.75</div>
-                        </td> 
-                    </tr>
-                    
-                    <tr>
-                        <td class="col-md-2 img-item"><img class="img-responsive" src="img/3D-Wallpaper-of-Lake-and-Moon-Wallpaper-Backgrounds-HD-Wallpapers.jpg"></td>
-                        <td>
-                            <div class="row">Description Irunika Lakmal Weeraratne</div>
-                            <div class="row">12.75</div>
-                        </td> 
-                    </tr>
+
                 </tbody>
             </table>
         </div>
