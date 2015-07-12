@@ -28,7 +28,6 @@
 
       items=new Query().getItemsByrPrice(request.getParameter("search"));
       for(int i=0;i<items.size();i++){
-
         out.println("-------------------------------------<br>");
         out.println("name: "+items.get(i).getItem_Name());
         out.println("Shop name: "+items.get(i).getUser());

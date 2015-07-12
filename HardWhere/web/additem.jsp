@@ -23,7 +23,7 @@
     <%=message==null?"":message%>
   </div>
   <div id="form">
-    <form id="addItemForm" action="additem" method="post">
+    <form id="addItemForm" action="additem" method="post" enctype="multipart/form-data">
       <table id="formTable">
         <tr><td>Item Name: </td> <td><input type="text" name="item_Name" id="itemName"></td></tr>
         <tr><td>Item Description: </td><td><textarea id="itemDescription" name="item_description" rows="10" cols="20"></textarea></td></tr>
@@ -33,6 +33,7 @@
           <option>Equipment</option>
         </select></td></tr>
         <tr><td>Item Price: </td><td><input type="text" name="item_price" id="itemPrice"></td></tr>
+        <tr><td>Availability: </td><td><input type=""></td></tr>
         <tr><td>Item Image: </td><td><input type="file" name="file" size="50"></td></tr>
         <tr><td></td><td><input type="submit" value="Add Item"></td></tr>
       </table>

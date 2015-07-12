@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="sdp.app.api-1.0.11-SNAPSHOT">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../consumerGoods/libs/sdp.app.api-1.0.11-SNAPSHOT.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
