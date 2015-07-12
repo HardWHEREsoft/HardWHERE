@@ -24,9 +24,9 @@ public class itemDetails  extends HttpServlet {
         doPost(request, response);
     }
 
-    public ArrayList<Item_POJO> getItemsByrPrice(String ItemName) throws UnknownHostException {
+    public Item_POJO getItemsByrPrice(String ItemID) throws UnknownHostException {
 
-        ArrayList<Item_POJO> reList=new ArrayList<>();
+
         MongoClient mongo = new MongoClient( "localhost" , 27017 );
         //Connect to database
         DB db = mongo.getDB("HardWHERE");
@@ -35,33 +35,31 @@ public class itemDetails  extends HttpServlet {
         DBCollection collection = db.getCollection("items");
 
         BasicDBObject whereQuery = new BasicDBObject();
-        whereQuery.put("item_Name", ItemName);
+
+        whereQuery.put("item_ID", ItemID);
         DBCursor cursor = collection.find(whereQuery);
         cursor.sort(new BasicDBObject("price ", -1));
-        while(cursor.hasNext()){
+        BasicDBObject document= (BasicDBObject) cursor.next();
 
-            BasicDBObject document= (BasicDBObject) cursor.next();
-
-            String user=document.getString("user");
-            String description=document.getString("item_Description");
-            String image=document.getString("item_Image");
-            long item_ID=document.getLong("item_ID");
-            String price=document.getString("item_Price");
-            String item_Type=document.getString("item_Type");
-            String item_Name=document.getString("item_Name");
+        String user=document.getString("user");
+        String description=document.getString("item_Description");
+        String image=document.getString("item_Image");
+        String item_ID=document.getString("item_ID");
+        String price=document.getString("item_Price");
+        String item_Type=document.getString("item_Type");
+        String item_Name=document.getString("item_Name");
 
 
-            Item_POJO items= new Item_POJO();
-            items.setItem_Description(description);
-            items.setItem_ID(item_ID);
-            items.setItem_Image(image);
-            items.setItem_Name(item_Name);
-            items.setItem_Price(price);
-            items.setItem_Type(item_Type);
-            items.setUser(user);
-            reList.add(items);
-        }
+        Item_POJO items= new Item_POJO();
+        items.setItem_Description(description);
+        items.setItem_ID(item_ID);
+        items.setItem_Image(image);
+        items.setItem_Name(item_Name);
+        items.setItem_Price(price);
+        items.setItem_Type(item_Type);
+        items.setUser(user);
 
-        return reList;
+
+        return items;
     }
 }

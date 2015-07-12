@@ -26,7 +26,7 @@ public class AddItem extends HttpServlet{
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response){
         Item_POJO item = new Item_POJO();
-        item.setItem_ID(System.nanoTime());
+        item.setItem_ID(String.valueOf(System.nanoTime()));
         item.setUser(request.getRemoteUser());
         item.setItem_Name(request.getParameter("item_Name"));
         item.setItem_Description(request.getParameter("item_description"));
