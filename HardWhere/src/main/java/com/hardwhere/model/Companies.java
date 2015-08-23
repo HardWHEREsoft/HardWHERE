@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Companies {
     private ArrayList<Item_POJO> items = new ArrayList<Item_POJO>();
-    private String CpmpanyID;
+    private String company_ID;
     private String company_Name;
     private String company_Address_line1;
     private String company_Address_line2;
@@ -39,11 +39,11 @@ public class Companies {
     }
 
     public String getCpmpanyID() {
-        return CpmpanyID;
+        return company_ID;
     }
 
     public void setCpmpanyID(String companyID) {
-        CpmpanyID = companyID;
+        this.company_ID = companyID;
     }
 
     public String getCompany_Name() {
