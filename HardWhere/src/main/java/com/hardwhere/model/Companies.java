@@ -20,7 +20,11 @@ public class Companies {
     private String userName;
     private String password;
     private List<String> messages;
+    private Person owner;
 
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
 
     public void setPassword(String password) {
         this.password = password;
