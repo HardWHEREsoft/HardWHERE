@@ -1,13 +1,8 @@
 package com.hardwhere.model;
 
 /**
- * Created by menaka on 7/11/15.
+ * Created by Ehelepola on 23/08/2015.
  */
-/*
-* This is the main structure of the item
-* An Item has : ID, Name, Price, Description, Image.
-* */
-
 public class Item_POJO {
 
     private String item_ID;
@@ -18,6 +13,42 @@ public class Item_POJO {
     private String user;
     private String company_id;
     private String item_Type;
+    private String item_Model;
+    private String item_Brand;
+    private String item_Size;
+    private String item_Thickness;
+
+    public String getItem_Model() {
+        return item_Model;
+    }
+
+    public void setItem_Model(String item_Model) {
+        this.item_Model = item_Model;
+    }
+
+    public String getItem_Brand() {
+        return item_Brand;
+    }
+
+    public void setItem_Brand(String item_Brand) {
+        this.item_Brand= item_Brand;
+    }
+
+    public String getItem_Size() {
+        return item_Size;
+    }
+
+    public void setItem_Size(String item_Size) {
+        this.item_Size = item_Size;
+    }
+
+    public String getItem_Thickness() {
+        return item_Thickness;
+    }
+
+    public void setItem_Thickness(String item_Thickness) {
+        this.item_Thickness = item_Thickness;
+    }
 
     public String getItem_Type() {
         return item_Type;
@@ -83,7 +114,7 @@ public class Item_POJO {
         this.item_Image = item_Image;
     }
 
-    public String print(){
+    public String toString(){
         return "Item Name: " + this.getItem_Name()+
                 "Item Description: " + this.getItem_Description()+
                 "Price: " + this.getItem_Price();
