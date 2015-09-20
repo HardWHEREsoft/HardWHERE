@@ -9,37 +9,136 @@
 <html>
 <head>
   <title>Add items</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/typeahead.bundle.js"></script>
+  <script type="text/javascript" src="js/animation.js"></script>
+  <script type="text/jscript" src="js/additem.js"></script>
 </head>
-<body>
 
-<div id="container">
-  <div id="header">
+<body id="page-top" class="index">
+<div>
+  <%
+    String message = (String)request.getAttribute("Result");
+  %>
+  <%=message==null?"":message%>
+</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <h1 class="col-md-6">HardWHERE.lk</h1>
+  </div><!-- /.navbar-collapse -->
+</nav>
 
-  </div>
-  <div>
-    <%
-      String message = (String)request.getAttribute("Result");
-    %>
-    <%=message==null?"":message%>
-  </div>
-  <div id="form">
-    <form id="addItemForm" action="additem" method="post">
-      <table id="formTable">
-        <tr><td>Item Name: </td> <td><input type="text" name="item_Name" id="itemName"></td></tr>
-        <tr><td>Item Description: </td><td><textarea id="itemDescription" name="item_description" rows="10" cols="20"></textarea></td></tr>
-        <tr><td>Type: </td><td><select id="itemType" name="item_Type">
-          <option>Service</option>
-          <option>Material</option>
-          <option>Equipment</option>
-        </select></td></tr>
-        <tr><td>Item Price: </td><td><input type="text" name="item_price" id="itemPrice"></td></tr>
-        <tr><td>Item Image: </td><td><input type="file" name="file" size="50"></td></tr>
-        <tr><td></td><td><input type="submit" value="Add Item"></td></tr>
+<section class="div_padding">
+  <div class="container"><h2><u>ADD NEW ITEM</u></h2></div>
+  <hr>
+</section>
+
+<section class="div_padding">
+  <div class="container" style="">
+
+    <!--        Select the Type-->
+    <table class="table">
+      <div class="form-group">
+        <td class="col-lg-2"><h4>Type</h4></td>
+        <td class="col-lg-10">
+          <select class="form-control" id="type" onchange="selectType();" style="width:30%">
+            <option value="Material">Material</option>
+            <option value="Equipment">Equipment</option>
+            <option value="Service">Service</option>
+          </select>
+        </td>
+      </div>
+    </table>
+    <hr>
+
+    <!--        Form-->
+    <form class="form" id="form_add">
+
+      <table class="table">
+
+        <tr id="mat_type">
+          <div class="form-group">
+            <td class="col-lg-2"><h4>Type of Material</h4></td>
+            <td class="col-lg-10">
+              <select class="form-control" id="type_mat" onchange="selectTile();" style="width:30%">
+                <option value="Bricks">Bricks</option>
+                <option value="Paint">Paint</option>
+                <option value="Tiles">Tiles</option>
+                <option value="Plywood">Plywood</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Bathroom">Bathroom Fittings</option>
+              </select>
+            </td>
+          </div>
+        </tr>
+
+        <tr id="tile_brands" hidden="hidden">
+          <div class="form-group">
+            <td class="col-lg-2"><h4>Brand</h4></td>
+            <td class="col-lg-10">
+              <select class="form-control" id="type" onchange="" style="width:30%">
+                <option value="Lanka_Tiles">Lanka Tiles</option>
+                <option value="Royal_Ceramic">Royal Ceramic</option>
+                <option value="AGL">AGL</option>
+              </select>
+            </td>
+          </div>
+        </tr>
+
+        <tr id="name_tr">
+          <div class="form-group">
+            <td class="col-lg-2"><h4 id="name">Item Name</h4></td>
+            <td class="col-lg-10"><input type="text" class="form-control col-lg-8" placeholder="Item Name"></td>
+          </div>
+        </tr>
+
+        <tr id="desc_tr">
+          <div class="form-group">
+            <td class="col-lg-2"><h4 id="desc">Item Description</h4></td>
+            <td class="col-lg-10"><textarea cols="5" rows="5" class="form-control" placeholder="Description about 100 words"></textarea></td>
+          </div>
+        </tr>
+
+        <tr id="price_tr">
+          <div class="form-group row">
+
+            <td class="col-md-2"><h4>Price</h4></td>
+            <td class="col-md-5"><input type="text" placeholder="Price" class="form-control" style="300px"></td>
+            <td class="col-md-5"><h4 id="price"> Per Unit</h4></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <td class="col-lg-2"><h4>Item Image</h4></td>
+            <td class="col-lg-10"><input type="file" name="file" size="50"></td>
+          </div>
+
+        </tr>
+
+        <tr id="submit_tr">
+          <td>
+            <div class="form-group">
+              <input type="submit" value="Add Item" class="btn btn-primary">
+            </div>
+          </td>
+        </tr>
+
       </table>
     </form>
   </div>
-  <div id="footer"></div>
-</div>
+</section>
 
+<footer>
+  <div class="text-center">
+    <div class="row top">Contact Us</div>
+    <div class="row bottom">copyrights &copy; HardWhereSoft</div>
+  </div>
+
+</footer>
 </body>
+
+
 </html>
