@@ -4,9 +4,12 @@ import com.hardwhere.controller.javaclasses.ConvertToPOJO;
 import com.hardwhere.controller.javaclasses.InsertIntoDB;
 import com.hardwhere.controller.javaclasses.MongoDBConnection;
 import com.hardwhere.model.Companies;
+import com.hardwhere.model.Person;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,30 +20,33 @@ import java.io.IOException;
  */
 public class Register extends HttpServlet {
 
+
+    private Person owner;
     private Companies company;
     MongoDBConnection conn = new MongoDBConnection();
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response){
-        this.company = new Companies();
+        this.owner = new Person();
+//        this.company = new Companies();
         request.getSession().removeAttribute("errorMessage1");
         request.getSession().setAttribute("errorMessage1", "");
 
-        //Create the class
-        String id = String.valueOf(System.nanoTime());
-        this.company.setCompany_Name(request.getParameter("name"));
-        this.company.setCompany_Address_line1(request.getParameter("address1"));
-        this.company.setCompany_Address_line2(request.getParameter("address2"));
-        this.company.setCompany_Address_line3(request.getParameter("address3"));
-        this.company.setCpmpanyID(id);
-        this.company.setDistrict(request.getParameter("district"));
-        this.company.setEmail(request.getParameter("email"));
-        this.company.setPostcode(request.getParameter("postal"));
-        this.company.setUserName(request.getParameter("username"));
-        this.company.setPassword(request.getParameter("password"));
-        this.company.setTelephone(request.getParameter("tel"));
+        this.owner.setName(request.getParameter("name"));
+        this.owner.setAddress1(request.getParameter("address1"));
+        this.owner.setAddress2(request.getParameter("address2"));
+        this.owner.setAddress3(request.getParameter("address3"));
+        this.owner.setEmail(request.getParameter("email"));
+        this.owner.setNic(request.getParameter("nic"));
+        this.owner.setTelephone(request.getParameter("tel"));
+        this.owner.setPoastalCode(request.getParameter("postal"));
+        this.owner.setDistrict(request.getParameter("district"));
+
+        //For logging
+        this.owner.setUserName(request.getParameter("username"));
+        this.owner.setPassword(request.getParameter("password"));
 
 
-        DBObject query = new BasicDBObject("username", this.company.getUserName());
+        DBObject query = new BasicDBObject("username", this.owner.getUserName());
         if(conn.check(this.company.getUserName())){
             this.enterData();
         }else{
@@ -53,17 +59,22 @@ public class Register extends HttpServlet {
             //request.getRequestDispatcher("/index.jsp").forward(request, response);
             request.getSession().setAttribute("errorMessage", "");
         }
- }
+        RequestDispatcher dispatcher = request.getRequestDispatcher("company_reg.jsp");
+        try {
+            dispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void enterData(){
-        conn.createConnection("company");
-        InsertIntoDB idb = new InsertIntoDB(this.company);
+        conn.createConnection("owner");
+        InsertIntoDB idb = new InsertIntoDB(this.owner);
         System.out.println();
-        ConvertToPOJO cp = new ConvertToPOJO((BasicDBObject)idb.toDBObject("company"));
+        ConvertToPOJO cp = new ConvertToPOJO((BasicDBObject)idb.toDBObject("owner"));
         System.out.println(cp.convertCom().toString());
-
-
-
     }
 
 }

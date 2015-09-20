@@ -50,8 +50,12 @@ public class AddItem extends HttpServlet{
         item.setItem_Name(request.getParameter("item_Name"));
         item.setItem_Description(request.getParameter("item_description"));
         item.setItem_Price(request.getParameter("item_price"));
-        item.setItem_Image(request.getParameter("item_image"));
+        item.setItem_Image(request.getParameter("file"));
         item.setItem_Type(request.getParameter("item_Type"));
+        System.out.println(request.getParameter("file"));
+        fileUplod(request);
+
+
 //        item.setUser_id(request.getParameter(""));
 
 //        InsertIntoDB iidb = new InsertIntoDB(item);
@@ -66,7 +70,7 @@ public class AddItem extends HttpServlet{
         System.out.println(request.getParameter("item_Type"));
         document.put("item_Type", request.getParameter("item_Type"));
 //        document.put("user_id", item.getCompany_id());
-        document.put("item_Image", request.getParameter("item_image"));
+        document.put("item_Image", request.getParameter("file"));
         document.put("item_Price", request.getParameter("item_price"));
         document.put("item_ID", item.getItem_ID());
         document.put("user", item.getUser());

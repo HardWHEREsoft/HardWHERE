@@ -12,68 +12,77 @@ import java.util.List;
 public class Person {
 
     private String name;
-    private String address;
-    private String sex;
+    private String address1;
+    private String address2;
+    private String address3;
     private String telephone;
     private String email;
     private String nic;
-
+    private String userName;
+    private String password;
+    private String poastalCode;
+    private String district;
     private List<Companies> companies;
-
-
-    public String getName() {
-        return name;
-    }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getSex() {
-        return sex;
+    public void setAddress1(String address1) {
+        this.address1 = address1;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setAddress2(String address2) {
+        this.address2 = address2;
     }
 
-    public String getTelephone() {
-        return telephone;
+    public void setAddress3(String address3) {
+        this.address3 = address3;
     }
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getNic() {
-        return nic;
     }
 
     public void setNic(String nic) {
         this.nic = nic;
     }
 
-    public List<Companies> getCompanies() {
-        return companies;
-    }
-
     public void setCompanies(List<Companies> companies) {
         this.companies = companies;
+    }
+
+    public void setPoastalCode(String poastalCode) {
+        this.poastalCode = poastalCode;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+
+    //Getters
+    public String getName() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getUserName() {
+        return userName;
     }
 }
