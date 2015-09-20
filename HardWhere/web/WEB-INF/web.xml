@@ -82,7 +82,7 @@
 
     <servlet-mapping>
         <servlet-name>Query</servlet-name>
-        <url-pattern>/query</url-pattern>
+        <url-pattern>/search</url-pattern>
     </servlet-mapping>
     
     <servlet>

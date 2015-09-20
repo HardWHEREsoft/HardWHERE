@@ -57,7 +57,7 @@ public class MyItems {
             cp = new ConvertToPOJO(obj);
             pojo = cp.convert();
 //            if(pojo.getItem_Type()!=null){
-            System.out.println(pojo.print());
+            System.out.println(pojo);
 //            }
             this.items.add(pojo);
 
