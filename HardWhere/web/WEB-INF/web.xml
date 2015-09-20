@@ -96,6 +96,16 @@
     </servlet-mapping>
     
     <servlet>
+        <servlet-name>Company_reg</servlet-name>
+        <servlet-class>com.hardwhere.controller.servlets.Company_Reg</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Company_reg</servlet-name>
+        <url-pattern>/company</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>com.hardwhere.controller.servlets.Login</servlet-class>
     </servlet>
@@ -114,5 +124,7 @@
         <servlet-name>item</servlet-name>
         <url-pattern>/item</url-pattern>
     </servlet-mapping>
+    
+    
 
 </web-app>
