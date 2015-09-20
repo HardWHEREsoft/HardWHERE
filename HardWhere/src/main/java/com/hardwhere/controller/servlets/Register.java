@@ -46,32 +46,51 @@ public class Register extends HttpServlet {
         this.owner.setPassword(request.getParameter("password"));
 
 
+        MongoClient mongoClient = null;
+        try {
+            mongoClient = new MongoClient( "localhost" , 27017 );
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+
+        DB mongoDatabase = mongoClient.getDB("HardWHERE");
+        DBCollection col=mongoDatabase.getCollection("owners");
         DBObject query = new BasicDBObject("username", this.owner.getUserName());
-        if(conn.check(this.owner.getUserName())){
-            this.enterData();
-        }else{
-            request.getSession().setAttribute("errorMessage1", "User name alredy exists");
+        DBCursor cursor = col.find(query);
+
+        if(cursor.hasNext()){
+            request.getSession().setAttribute("Message", "User name alredy exists");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/erorpage.jsp");
+            try {
+                dispatcher.forward(request,response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             try {
                 response.sendRedirect(request.getHeader("Referer"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            //request.getRequestDispatcher("/index.jsp").forward(request, response);
-            request.getSession().setAttribute("errorMessage", "");
+//            request.getSession().setAttribute("Message", "");
+        }else{
+            this.enterData(col);
+            request.getSession().setAttribute("customer", this.owner.getEmail());
+            request.getSession().setAttribute("User", this.owner.getName());
+            RequestDispatcher dispatcher = request.getRequestDispatcher("company_reg.jsp");
+            try {
+                dispatcher.forward(request,response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-        request.getSession().setAttribute("customer", this.owner.getEmail());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("company_reg.jsp");
-        try {
-            dispatcher.forward(request,response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
-    public void enterData(){
+    public void enterData(DBCollection col){
 
 
         BasicDBObject owner = new BasicDBObject();
@@ -86,14 +105,9 @@ public class Register extends HttpServlet {
                 .append("district", this.owner.getDistrict());
 
 
-        MongoClient mongoClient = null;
-        try {
-            mongoClient = new MongoClient( "localhost" , 27017 );
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-        DB mongoDatabase = mongoClient.getDB("HardWHERE");
-        DBCollection col=mongoDatabase.getCollection("owners");
+//
+//        DB mongoDatabase = mongoClient.getDB("HardWHERE");
+//        DBCollection col=mongoDatabase.getCollection("owners");
         col.insert(owner);
 
 //        conn.createConnection("owner");

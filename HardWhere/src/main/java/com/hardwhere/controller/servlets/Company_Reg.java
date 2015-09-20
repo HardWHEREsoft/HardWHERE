@@ -38,6 +38,7 @@ public class Company_Reg extends HttpServlet{
         this.addCompany(request);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("dashboard.jsp");
+
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {
