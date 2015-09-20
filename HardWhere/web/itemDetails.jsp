@@ -63,7 +63,7 @@
 
     <nav class="navbar navbar-default">
       <div class="container-fluid">
-        <h1 class="col-md-6"><a href="index.jsp"> HardWHERE.lk</a><</h1>
+        <h1 class="col-md-6"><a href="index.jsp"> HardWHERE.lk</a></h1>
       </div>
     </nav>
 

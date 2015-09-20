@@ -25,7 +25,7 @@
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <h1 class="col-md-6"><a href="index.jsp"> HardWHERE.lk</a><</h1>
+    <h1 class="col-md-6"><a href="index.jsp"> HardWHERE.lk</a></h1>
     <div class="col-md-6" style="text-align:right; margin-top:20px"> <button class="btn btn-sm">logout</button> </div>
   </div><!-- /.navbar-collapse -->
 
