@@ -14,10 +14,9 @@ public class MessagesDB {
 
 
     public void UpdateUserCollection(String name,String address,String applicationID,String message,String shopName) throws UnknownHostException {
-        System.out.println("in Here");
+
         MongoClient mongo=new MongoClient("localhost",27017);
         //Connect to database
-        System.out.println("in Here too");
         DB db = mongo.getDB("HardWHERE");
 
         //Update Database
