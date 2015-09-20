@@ -59,7 +59,7 @@ public class Login extends HttpServlet {
             BasicDBObject owner = (BasicDBObject) cursor.next();
             if(owner.get("username").equals(username) && owner.get("password").equals(password)){
                 System.out.println("Successful");
-                request.getSession().setAttribute("User", username);
+                request.getSession().setAttribute("User", owner.get("name"));
                 dispatcher.forward(request, response);
 
             }else{

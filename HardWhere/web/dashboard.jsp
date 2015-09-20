@@ -26,8 +26,24 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <h1 class="col-md-6">HardWHERE.lk</h1>
-  </div>
+    <div class="col-md-6" style="text-align:right; margin-top:20px"> <button class="btn btn-sm">logout</button> </div>
+  </div><!-- /.navbar-collapse -->
+
 </nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"><h3>Hi <span>${User}</span>,</h3></div>
+    <div class="col-md-4">
+      <h1 style="text-align:center">MY DASHBOARD</h1>
+      <hr>
+    </div>
+    <div class="col-md-4" style="text-align:center; margin-top:20px">
+
+      <button class="btn btn-primary">Add New Item</button>
+    </div>
+  </div>
+</div>
 
 <!--2 buttons show info and add item-->
 <section class="div_padding">
@@ -38,42 +54,30 @@
   <hr>
 </section>
 
-<!--# columns to sho details-->
 <section class="div_padding">
-  <div class="container text-center show-hide" hidden="hidden">
-    <div class="col-md-3 col-xs-12 rcorners">
-      <h4>My Material</h4>
-      <ul class="text-left">
-        <li>Cement</li>
-        <li>Sand</li>
-        <li>Lime</li>
-        <li>Cement</li>
-        <li>Cement</li>
-      </ul>
-    </div>
-    <div class="col-md-1"></div>
-    <div class="col-md-3 col-xs-12 rcorners">
-      <h4>My Services</h4>
-      <ul class="text-left">
-        <li>Lorries</li>
-        <li>Bull Dozers</li>
-        <li>Masons</li>
-        <li>Quantity Surveyors</li>
-        <li>Engineers</li>
-      </ul>
+  <div class="container" >
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row"></div>
 
+        <div class="row">
+          <h4><u>My Messages</u></h4>
+          <table class="table table-hover">
+            <tr><td>User1 <br>df fdkfsl fs fskdf ldsf sdf sdfkmf srf dfkd fdkf dfgk dfg g<hr></td></tr>
+            <tr><td>User1 <br>df fdkfsl fs fskdf ldsf sdf sdfkmf srf dfkd fdkf dfgk dfg g<hr></td></tr>
+            <tr><td>User1 <br>df fdkfsl fs fskdf ldsf sdf sdfkmf srf dfkd fdkf dfgk dfg g<hr></td></tr>
+          </table>
+          <button class="btn btn-primary">See All Messages</button>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <h4><u>Statistics</u></h4>
+        <img src="img/Stats.gif" class="img-responsive">
+      </div>
     </div>
 
-    <div class="col-md-1"></div>
-    <div class="col-md-3 col-xs-12 rcorners">
-      <h4>My Equipments</h4>
-      <ul class="text-left">
-        <li>Hammers</li>
-        <li>Drill</li>
-      </ul>
-    </div>
   </div>
-  <div class="row" style="margin-bottom: 30px"></div>
 </section>
 
 <footer>
