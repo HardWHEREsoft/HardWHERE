@@ -38,10 +38,11 @@
       <h1 style="text-align:center">MY DASHBOARD</h1>
       <hr>
     </div>
-    <div class="col-md-4" style="text-align:center; margin-top:20px">
+    <div class="col-md-4" style="text-align:right; margin-top:20px">
 
-      <div class="col-md-2 col-xs-6"><a href="additem.jsp" class="btn btn-default">Add Item</a></div>
-    </div>
+      <a href="additem.jsp" class="btn btn-primary">Add Item</a>
+  </div>
+  </div>
   </div>
 </div>
 
@@ -60,7 +61,7 @@
             <tr><td>User1 <br>df fdkfsl fs fskdf ldsf sdf sdfkmf srf dfkd fdkf dfgk dfg g<hr></td></tr>
             <tr><td>User1 <br>df fdkfsl fs fskdf ldsf sdf sdfkmf srf dfkd fdkf dfgk dfg g<hr></td></tr>
           </table>
-          <button class="btn btn-primary">See All Messages</button>
+          <a href="messages.jsp" class="btn btn-primary">See All Messages</a>
         </div>
       </div>
 

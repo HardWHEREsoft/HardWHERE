@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : Jul 7, 2015, 10:37:53 PM
-    Author     : sachiththra
+    Author     : Irunika Lakmal
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
