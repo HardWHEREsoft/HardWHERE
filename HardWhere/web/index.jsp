@@ -36,6 +36,8 @@
         <input type="password" class="form-control input-sm" placeholder="Password" name="password">
       </div>
       <button type="submit" class="btn btn-sm">login</button>
+
+      <div></div>
     </form>
   </div><!-- /.navbar-collapse -->
 </nav>
@@ -47,139 +49,62 @@
   <hr>
 </section>
 
-<!--Sorting Area-->
-<section class="sorting div_padding text-center bottom_border">
-  <div class="container">
-    <div class="row">
-      <!--Sorting div-->
-      <form class="form-horozontal" method="get" action="">
-        <div class="form-group">
-          <div class="col-md-4 selectContainer text-left">
-            <select id="select_dist" class="form-control" id="district">
-              <option>--Select District--</option>
-              <option>Kegalle</option>
-              <option>Mawanella</option>
-              <option>Mathara</option>
-            </select>
-          </div>
-
-          <div class="col-md-2">
-            <label class="checkbox large text"><input type="checkbox" value="">Sort by price</label>
-          </div>
-
-          <div class="col-md-6 text-inline">
-
-            <form action="query" method="get">
-              <div class="col-md-6">
-                <label for="search">
-                  <input id="search" name="search" type="search" style="width:120%" class="form-control input-md col-md-4" placeholder="search item">
-                </label>
-              </div>
-              <div class="mol-md-4">
-                <input type="submit" value="Search" class="btn btn-default">
-              </div>
-            </form>
-          </div>
-
-        </div>
-      </form>
-
-    </div>
-
-    <!--View Area-->
-    <div class="col-md-8 view">
-
-    </div>
-  </div>
-  <hr class="phone-visible">
-</section>
-
-
-
-
-<!--Catagory Slide-->
+<!--This is to contain details of the project-->
 <section class="div_padding">
   <div class="container">
-    <a><h3 onclick="alertMe();">Catagaries</h3></a>
-    <div id="categories" class="row show-hide" hidden="hidden">
-      <a><h4>Materials</h4></a>
-      <div class="row show-hide-div" hidden="hidden">
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
+
+    <!--   Row1     -->
+    <div class="row">
+      <div class="col-md-6">
+        <a>
+          <h3>Bricks & Blocks</h3>
+          <img src="img/index/Bricks.png">
+        </a>
       </div>
-      <a><h4>Equipments</h4></a>
-      <div class="row show-hide-div2" hidden="hidden">
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-      </div>
-      <a><h4>Services</h4></a>
-      <div class="row show-hide-div3" hidden="hidden">
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
-        <div class="col-md-2 col-xs-4"><a>Cement</a></div>
+
+      <div class="col-md-6">
+        <a>
+          <h3>Paint & Accessories</h3>
+          <img src="img/index/paint.png">
+        </a>
       </div>
     </div>
-  </div>
-  <hr>
-</section>
 
+    <!--   Row2     -->
+    <div class="row">
+      <div class="col-md-6">
+        <a href="ItemsDetails.html">
+          <h3>Tiles (Falls & Walls)</h3>
+          <img src="img/index/Tiles.png">
+        </a>
+      </div>
 
-
-
-
-<!--Table after getting tesults-->
-<section class="result_table div_padding">
-  <div class="row">
-    <div class=" container col-md-offset-3 col-md-6">
-      <table class="table table-hover">
-        <tbody>
-
-        <%
-          ArrayList<Item_POJO> items;
-
-          items=new Query().getItemsByrPrice(request.getParameter("search"));
-          for(int i=0;i<items.size();i++){
-            out.println("<tr>");
-            out.println("<td class=\"col-md-2 img-item\"><img class=\"img-responsive\" src=\"img/profilePic.png\"></td>");
-            //out.println("<a href=\"item?item_id="+items.get(i).getItem_ID()+"\""+">"+items.get(i).getItem_Name()+" </a>");
-            out.println("<td>");
-            out.println("<div class=\"row\">"+"<a href=\"item?item_id="+items.get(i).getItem_ID()+"\""+">"+items.get(i).getItem_Description()+" </a>"+"</div>");
-
-            //out.println("Image: "+items.get(i).getItem_Image());
-            //        out.println("District: "+items.get(i).getDistrict());
-            out.println("<div class=\"row\">"+"RS:"+items.get(i).getItem_Price()+"</div>");
-            out.println("<div class=\"row\">"+"service:"+items.get(i).getItem_Type()+"</div>");
-            out.println("</td>");
-            out.println("</tr>");
-          }
-        %>
-
-
-        </tbody>
-      </table>
+      <div class="col-md-6">
+        <a>
+          <h3>Plywood Laminates Veneers</h3>
+          <img src="img/index/Plywood.png">
+        </a>
+      </div>
     </div>
+
+    <!--   Row3     -->
+    <div class="row">
+      <div class="col-md-6">
+        <a>
+          <h3>Electrical Products & Accessories</h3>
+          <img src="img/index/elec.png">
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a>
+          <h3>Bathroom Fittings & Accessories</h3>
+          <img src="img/index/Bathroom.png">
+        </a>
+      </div>
+    </div>
+
   </div>
-  <hr>
 </section>
 
 <footer>

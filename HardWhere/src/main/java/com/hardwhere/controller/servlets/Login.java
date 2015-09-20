@@ -48,27 +48,45 @@ public class Login extends HttpServlet {
 
         String username=request.getParameter("username");
         String password=request.getParameter("password");
-
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/dashboard.jsp");
 //        PrintWriter out = response.getWriter();
         DB db = m.getDB( "HardWHERE" );
 
-        DBCollection coll = db.getCollection("companies");
+        DBCollection coll = db.getCollection("owners");
         DBObject query = new BasicDBObject("username", username);
         DBCursor cursor = coll.find(query);
+        if(cursor.hasNext()){
+            BasicDBObject owner = (BasicDBObject) cursor.next();
+            if(owner.get("username").equals(username) && owner.get("password").equals(password)){
+                System.out.println("Successful");
+                request.getSession().setAttribute("User", username);
+                dispatcher.forward(request, response);
 
-        BasicDBObject fields = new BasicDBObject("password", 1).append("name", 1);
-        DBObject d1 = coll.findOne(query, fields);
+            }else{
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/dashboard.jsp");
-
-        if(username.equals("menaka12350@gmail.com") && password.equals("1234")){
-            request.setAttribute("User", username);
-            dispatcher.forward(request, response);
+                RequestDispatcher dispatcher1 = request.getRequestDispatcher("/erorpage.jsp");
+                request.getSession().setAttribute("Message", "Invalid password");
+                dispatcher1.forward(request, response);
+            }
         }else{
-            RequestDispatcher dispatcher1 = request.getRequestDispatcher("/index.jsp");
-            request.setAttribute("Message", "Invalid email or password");
+            RequestDispatcher dispatcher1 = request.getRequestDispatcher("/erorpage.jsp");
+            request.getSession().setAttribute("Message", "Invalid email or password");
             dispatcher1.forward(request, response);
         }
+
+//        BasicDBObject fields = new BasicDBObject("password", 1).append("name", 1);
+//        DBObject d1 = coll.findOne(query, fields);
+//
+//
+//
+//
+//        if(username.equals(coll.) && password.equals("1234")){
+//
+//        }else{
+//            RequestDispatcher dispatcher1 = request.getRequestDispatcher("/index.jsp");
+//            request.setAttribute("Message", "Invalid email or password");
+//            dispatcher1.forward(request, response);
+//        }
 
 //        if(cursor.hasNext()){
 //

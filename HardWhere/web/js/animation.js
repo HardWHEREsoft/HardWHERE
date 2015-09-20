@@ -4,8 +4,8 @@ function alertMe(){
 
 
 $(function() {
-    $(document).on('click', "#categories h4", function(e){
-        $('#categories').find('.row').slideUp();
+    $(document).on('click', "#filter h4", function(e){
+        $('#filter').find('.row').slideUp();
         $(this).closest('a').next('div').slideDown();
         e.stopPropagation();
     })
