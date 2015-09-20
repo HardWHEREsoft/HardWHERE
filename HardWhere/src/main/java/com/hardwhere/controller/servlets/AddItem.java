@@ -54,6 +54,7 @@ public class AddItem extends HttpServlet{
         String itemThickness=request.getParameter("itemThickness");
         String itemPrice=request.getParameter("itemPrice");
         String file=request.getParameter("file");
+        String companyID= (String) request.getSession().getAttribute("User");
 
         Item_POJO item_pojo=new Item_POJO();
         item_pojo.setItem_Type(item_Type);
@@ -66,7 +67,7 @@ public class AddItem extends HttpServlet{
         item_pojo.setItem_Price(itemPrice);
         item_pojo.setItem_Size(itemSize);
         item_pojo.setItem_Thickness(itemThickness);
-        item_pojo.setCompany_id("You have to get this from the session");
+        item_pojo.setCompany_id(companyID);
 
         ObjectMapper mapper = new ObjectMapper();
         String item=mapper.writeValueAsString(item_pojo);

@@ -20,7 +20,7 @@ public class Query  extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("ItemsDetails.jsp").forward(request, response);
     }
 
     @Override
