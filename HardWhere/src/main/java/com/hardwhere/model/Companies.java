@@ -7,75 +7,53 @@ import java.util.List;
  * Created by menaka on 7/11/15.
  */
 public class Companies {
-    private ArrayList<Item_POJO> items = new ArrayList<Item_POJO>();
-    private String company_ID;
-    private String company_Name;
-    private String company_Address_line1;
-    private String company_Address_line2;
-    private String company_Address_line3;
-    private String district;
-    private String postcode;
+
+    private String  shop_name;
+    private String type;
+    private String address1;
+    private String address2;
+    private String address3;
     private String telephone;
     private String email;
-    private String userName;
-    private String password;
-    private List<String> messages;
-    private Person owner;
 
-    public void setOwner(Person owner) {
-        this.owner = owner;
+    public String getShop_name() {
+        return shop_name;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setShop_name(String shop_name) {
+        this.shop_name = shop_name;
     }
 
-    public ArrayList<Item_POJO> getItems() {
-        return items;
+    public String getType() {
+        return type;
     }
 
-    public void setItems(ArrayList<Item_POJO> items) {
-        this.items = items;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getCpmpanyID() {
-        return company_ID;
+    public String getAddress1() {
+        return address1;
     }
 
-    public void setCpmpanyID(String companyID) {
-        this.company_ID = companyID;
+    public void setAddress1(String address1) {
+        this.address1 = address1;
     }
 
-    public String getCompany_Name() {
-        return company_Name;
+    public String getAddress2() {
+        return address2;
     }
 
-    public void setCompany_Name(String company_Name) {
-        this.company_Name = company_Name;
+    public void setAddress2(String address2) {
+        this.address2 = address2;
     }
 
-    public String getCompany_Address_line1() {
-        return company_Address_line1;
+    public String getAddress3() {
+        return address3;
     }
 
-    public void setCompany_Address_line1(String company_Address_line1) {
-        this.company_Address_line1 = company_Address_line1;
-    }
-
-    public String getCompany_Address_line2() {
-        return company_Address_line2;
-    }
-
-    public void setCompany_Address_line2(String company_Address_line2) {
-        this.company_Address_line2 = company_Address_line2;
-    }
-
-    public String getCompany_Address_line3() {
-        return company_Address_line3;
-    }
-
-    public void setCompany_Address_line3(String company_Address_line3) {
-        this.company_Address_line3 = company_Address_line3;
+    public void setAddress3(String address3) {
+        this.address3 = address3;
     }
 
     public String getTelephone() {
@@ -93,50 +71,4 @@ public class Companies {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-
-    public List<String> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(List<String> messages) {
-        this.messages = messages;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-    }
-
-    public String getPostcode() {
-        return postcode;
-    }
-
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
-    }
-
-    @Override
-    public String toString(){
-        return this.company_Name + "\n"
-                +this.company_Address_line1 +", \n"
-                +this.company_Address_line2 + ", \n"
-                +this.company_Address_line3 + ", \n";
-    }
-
 }

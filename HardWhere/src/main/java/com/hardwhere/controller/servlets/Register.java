@@ -5,8 +5,7 @@ import com.hardwhere.controller.javaclasses.InsertIntoDB;
 import com.hardwhere.controller.javaclasses.MongoDBConnection;
 import com.hardwhere.model.Companies;
 import com.hardwhere.model.Person;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
+import com.mongodb.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.UnknownHostException;
 
 /**
  * Created by menaka on 7/12/15.
@@ -47,7 +47,7 @@ public class Register extends HttpServlet {
 
 
         DBObject query = new BasicDBObject("username", this.owner.getUserName());
-        if(conn.check(this.company.getUserName())){
+        if(conn.check(this.owner.getUserName())){
             this.enterData();
         }else{
             request.getSession().setAttribute("errorMessage1", "User name alredy exists");
@@ -59,6 +59,8 @@ public class Register extends HttpServlet {
             //request.getRequestDispatcher("/index.jsp").forward(request, response);
             request.getSession().setAttribute("errorMessage", "");
         }
+
+        request.getSession().setAttribute("customer", this.owner.getEmail());
         RequestDispatcher dispatcher = request.getRequestDispatcher("company_reg.jsp");
         try {
             dispatcher.forward(request,response);
@@ -70,11 +72,35 @@ public class Register extends HttpServlet {
     }
 
     public void enterData(){
-        conn.createConnection("owner");
-        InsertIntoDB idb = new InsertIntoDB(this.owner);
-        System.out.println();
-        ConvertToPOJO cp = new ConvertToPOJO((BasicDBObject)idb.toDBObject("owner"));
-        System.out.println(cp.convertCom().toString());
+
+
+        BasicDBObject owner = new BasicDBObject();
+        owner.append("name", this.owner.getName());
+        owner.append("username", this.owner.getUserName());
+        owner.append("password", this.owner.getPassword());
+        owner.append("address1", this.owner.getAddress1())
+                .append("address2", this.owner.getAddress2())
+                .append("address3", this.owner.getAddress3())
+                .append("post", this.owner.getPoastalCode())
+                .append("email", this.owner.getEmail())
+                .append("district", this.owner.getDistrict());
+
+
+        MongoClient mongoClient = null;
+        try {
+            mongoClient = new MongoClient( "localhost" , 27017 );
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        DB mongoDatabase = mongoClient.getDB("HardWHERE");
+        DBCollection col=mongoDatabase.getCollection("owners");
+        col.insert(owner);
+
+//        conn.createConnection("owner");
+//        InsertIntoDB idb = new InsertIntoDB(this.owner);
+//        System.out.println();
+//        ConvertToPOJO cp = new ConvertToPOJO((BasicDBObject)idb.toDBObject("owner"));
+//        System.out.println(cp.convertCom().toString());
     }
 
 }

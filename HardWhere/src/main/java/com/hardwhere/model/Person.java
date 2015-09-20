@@ -85,4 +85,36 @@ public class Person {
     public String getUserName() {
         return userName;
     }
+
+    public String getAddress1() {
+        return address1;
+    }
+
+    public String getAddress2() {
+        return address2;
+    }
+
+    public String getAddress3() {
+        return address3;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getNic() {
+        return nic;
+    }
+
+    public String getPoastalCode() {
+        return poastalCode;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
 }
