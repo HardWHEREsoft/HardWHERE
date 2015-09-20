@@ -40,19 +40,12 @@
     </div>
     <div class="col-md-4" style="text-align:center; margin-top:20px">
 
-      <button class="btn btn-primary">Add New Item</button>
+      <div class="col-md-2 col-xs-6"><a href="additem.jsp" class="btn btn-default">Add Item</a></div>
     </div>
   </div>
 </div>
 
-<!--2 buttons show info and add item-->
-<section class="div_padding">
-  <div class="container text-center">
-    <div class="col-md-2 col-xs-6"><input  type="submit" class="btn btn-default" value="My Items" onclick="alertMe();"></div>
-    <div class="col-md-2 col-xs-6"><a href="additem.jsp" class="btn btn-default">Add Item</a></div>
-  </div>
-  <hr>
-</section>
+
 
 <section class="div_padding">
   <div class="container" >
@@ -73,7 +66,7 @@
 
       <div class="col-md-8">
         <h4><u>Statistics</u></h4>
-        <img src="img/Stats.gif" class="img-responsive">
+        <img src="img/stats.gif" class="img-responsive">
       </div>
     </div>
 
