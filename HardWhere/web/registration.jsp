@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : Jul 7, 2015, 10:37:53 PM
-    Author     : sachiththra
+    Author     : Irunika Lakmal
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,7 +21,7 @@
 
    <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <h1 class="col-md-6">HardWHERE.lk</h1>
+            <h1 class="col-md-6"><a href="index.jsp"> HardWHERE.lk</a></h1>
 
 
         </div><!-- /.navbar-collapse -->
