@@ -54,7 +54,7 @@
     <hr>
 
     <!--        Form-->
-    <form class="form" id="form_add" method="post">
+    <form class="form" id="form_add" method="post" action="/additem">
 
       <table class="table">
 

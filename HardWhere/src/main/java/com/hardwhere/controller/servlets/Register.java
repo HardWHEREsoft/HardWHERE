@@ -78,7 +78,7 @@ public class Register extends HttpServlet {
             this.enterData(col);
             request.getSession().setAttribute("customer", this.owner.getEmail());
             request.getSession().setAttribute("User", this.owner.getName());
-            RequestDispatcher dispatcher = request.getRequestDispatcher("company_reg.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("dashboard.jsp");
             try {
                 dispatcher.forward(request,response);
             } catch (ServletException e) {
