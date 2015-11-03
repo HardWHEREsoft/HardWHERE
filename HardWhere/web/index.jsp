@@ -73,7 +73,7 @@
     <!--   Row2     -->
     <div class="row">
       <div class="col-md-6">
-        <a href="ItemsDetails.jsp">
+        <a href="search?item_Type=Material&itemModel=Tile">
           <h3>Tiles (Falls & Walls)</h3>
           <img src="img/index/Tiles.png">
         </a>

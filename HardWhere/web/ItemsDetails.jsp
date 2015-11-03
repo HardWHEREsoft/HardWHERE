@@ -1,3 +1,6 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.hardwhere.model.Item_POJO" %>
+<%@ page import="com.hardwhere.controller.servlets.Query" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +57,7 @@
                   </div>
                 <hr>
                 
-                <button class="btn btn-primary btn-block">Filter</button>
+                <button class="btn btn-primary btn-block"><a href="search?item_Type=Material&itemModel=Tile=">Filter</a></button>
                 
             </div>
                 
@@ -66,54 +69,69 @@
                 
                 <div class="row">
                     
-                    <div class="itemDisplay col-md-3 col-xs-6">
-                        <img class="img-responsive" src="img/test/3D-Morning-Dew-HD-Wallpaper.jpg">
-                        <p>Details</p>
-                        <p>Price</p>
-                        <button class="btn">MORE INFO</button>
-                    </div>
+                    <%
+                        ArrayList<Item_POJO> arrayList=new ArrayList<>();
+                        String item_Type=request.getParameter("item_Type");
+                        String itemModel=request.getParameter("itemModel");
+                        String itemBrand=request.getParameter("itemBrand");
+                        String itemSize=request.getParameter("itemSize");
+                        String itemThickness=request.getParameter("itemThickness");
+                        Query query=new Query();
+                        arrayList=query.getItemList(item_Type, itemModel, itemBrand, itemSize, itemThickness);
+                        Item_POJO item_pojo=new Item_POJO();
+                        for(int i=0;i<arrayList.size();i++){
+                            item_pojo=arrayList.get(i);
+                            out.println("<div class=\"itemDisplay col-md-3 col-xs-6\">");
+                            out.println("<img class=\"img-responsive\" src=\"img/test/3D-Morning-Dew-HD-Wallpaper.jpg\">");
+                            out.println("<p>Details</p>");
+                            out.println("<p>Price:"+item_pojo.getItem_Price()+"</p>");
+                            out.println("<button class=\"btn\"><a href=\"item?Company_ID="+item_pojo.getCompany_id()+"\">MORE INFO</a></button>");
+                            out.println("</div>");
+                        }
+
+                    %>
                     
                     <div class="itemDisplay col-md-3 col-xs-6">
                         <img class="img-responsive" src="img/test/3.jpg">
                         <p>Details</p>
                         <p>Price</p>
-                        <button class="btn">MORE INFO</button>
+                        <button class="btn"><a href="item?Item_ID=">MORE INFO</a> </button>
                     </div>
                     
-                    <div class="itemDisplay col-md-3 col-xs-6">
-                        <img class="img-responsive" src="img/test/3D-Wallpaper-of-Lake-and-Moon-Wallpaper-Backgrounds-HD-Wallpapers.jpg">
-                        <p>Details</p>
-                        <p>Price</p>
-                        <button class="btn">MORE INFO</button>
-                    </div>
-                    
-                    <div class="itemDisplay col-md-3 col-xs-6">
-                        <img class="img-responsive" src="img/test/profilePic.png">
-                        <p>Details</p>
-                        <p>Price</p>
-                        <button class="btn">MORE INFO</button>
-                    </div>
-                    
-                    <div class="itemDisplay col-md-3 col-xs-6">
-                        <img class="img-responsive" src="img/test/3D-Morning-Dew-HD-Wallpaper.jpg">
-                        <p>Details</p>
-                        <p>Price</p>
-                        <button class="btn">MORE INFO</button>
-                    </div>
-                    
-                    <div class="itemDisplay col-md-3 col-xs-6">
-                        <img class="img-responsive" src="img/test/3D-Morning-Dew-HD-Wallpaper.jpg">
-                        <p>Details</p>
-                        <p>Price</p>
-                        <button class="btn">MORE INFO</button>
-                    </div>
-                    
-                    <div class="itemDisplay col-md-3 col-xs-6">
-                        <img class="img-responsive" src="img/test/3D-Morning-Dew-HD-Wallpaper.jpg">
-                        <p>Details</p>
-                        <p>Price</p>
-                        <button class="btn">MORE INFO</button>
-                    </div>
+                    <%--<div class="itemDisplay col-md-3 col-xs-6">--%>
+                        <%--<img class="img-responsive" src="img/test/3D-Wallpaper-of-Lake-and-Moon-Wallpaper-Backgrounds-HD-Wallpapers.jpg">--%>
+                        <%--<p>Details</p>--%>
+                        <%--<p>Price</p>--%>
+                        <%--<button class="btn">MORE INFO</button>--%>
+                    <%--</div>--%>
+                    <%----%>
+                    <%--<div class="itemDisplay col-md-3 col-xs-6">--%>
+                        <%--<img class="img-responsive" src="img/test/profilePic.png">--%>
+                        <%--<p>Details</p>--%>
+                        <%--<p>Price</p>--%>
+                        <%--<button class="btn">MORE INFO</button>--%>
+                    <%--</div>--%>
+                    <%----%>
+                    <%--<div class="itemDisplay col-md-3 col-xs-6">--%>
+                        <%--<img class="img-responsive" src="img/test/3D-Morning-Dew-HD-Wallpaper.jpg">--%>
+                        <%--<p>Details</p>--%>
+                        <%--<p>Price</p>--%>
+                        <%--<button class="btn">MORE INFO</button>--%>
+                    <%--</div>--%>
+                    <%----%>
+                    <%--<div class="itemDisplay col-md-3 col-xs-6">--%>
+                        <%--<img class="img-responsive" src="img/test/3D-Morning-Dew-HD-Wallpaper.jpg">--%>
+                        <%--<p>Details</p>--%>
+                        <%--<p>Price</p>--%>
+                        <%--<button class="btn">MORE INFO</button>--%>
+                    <%--</div>--%>
+                    <%----%>
+                    <%--<div class="itemDisplay col-md-3 col-xs-6">--%>
+                        <%--<img class="img-responsive" src="img/test/3D-Morning-Dew-HD-Wallpaper.jpg">--%>
+                        <%--<p>Details</p>--%>
+                        <%--<p>Price</p>--%>
+                        <%--<button class="btn">MORE INFO</button>--%>
+                    <%--</div>--%>
                     
                 </div>
                 

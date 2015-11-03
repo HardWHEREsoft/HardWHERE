@@ -1,5 +1,6 @@
 <%@ page import="com.hardwhere.model.Item_POJO" %>
 <%@ page import="com.hardwhere.controller.servlets.itemDetails" %>
+<%@ page import="com.hardwhere.model.Companies" %>
 <%--
   Created by IntelliJ IDEA.
   User: Ehelepola
@@ -12,9 +13,9 @@
 
 <%
 
-  Item_POJO items;
+  Companies companies=new Companies();
 
-  items=new itemDetails().getItemsByrPrice(request.getParameter("item_id"));
+  companies=new itemDetails().getItemsByrPrice(request.getParameter("Company_ID"));
 
 
 %>
@@ -55,7 +56,7 @@
         var marker = new google.maps.Marker({ position: myLatlng, map: map, draggable:true, title:"Drag me!"});}
       google.maps.event.addDomListener(window, 'load', initialize);
     }
-    homeMap("matale");
+    homeMap(<%=companies.getAddress3()%>);
   </script>
 </head>
 <body id="page-top" class="index">
@@ -73,11 +74,9 @@
           <div class="col-md-4">
             <table class="table table-striped">
               <tbody>
-              <tr><td>Item Name</td></tr>
-              <tr><td>Address</td></tr>
-              <tr><td>Service</td></tr>
-              <tr><td>Shop Name</td></tr>
-              <tr><td>Contact</td></tr>
+              <tr><td>Shop Name:<%=companies.getShop_name()%></td></tr>
+              <tr><td>Address:<%=companies.getAddress3()%></td></tr>
+              <tr><td>Contact:<%=companies.getTelephone()%></td></tr>
               </tbody>
             </table>
           </div>

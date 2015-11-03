@@ -20,7 +20,7 @@ public class Query  extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("ItemsDetails.jsp").forward(request, response);
     }
 
     @Override
@@ -131,10 +131,10 @@ public class Query  extends HttpServlet {
         BasicDBList list4=getIdsList(Model_children,itemThickness);
 
         BasicDBList finalList=new BasicDBList();
-//        System.out.println(list1);
-//        System.out.println(list2);
-//        System.out.println(list3);
-//        System.out.println(list4);
+        System.out.println(list1);
+        System.out.println(list2);
+        System.out.println(list3);
+        System.out.println(list4);
 
         if(list2!=null && list3!=null && list4!=null){
 
