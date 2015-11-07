@@ -39,8 +39,8 @@
       <hr>
     </div>
     <div class="col-md-4" style="text-align:right; margin-top:20px">
-
-      <a href="additem.jsp" class="btn btn-primary">Add Item</a>
+      <a href="company_reg.jsp" class="btn btn-primary">Add Company</a>
+      <%--<a href="additem.jsp" class="btn btn-primary">Add Item</a>--%>
   </div>
   </div>
   </div>

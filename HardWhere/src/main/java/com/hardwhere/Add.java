@@ -22,7 +22,7 @@ public class Add {
         DB db = mongo.getDB("HardWHERE");
 
         //Update Database
-        DBCollection collection = db.getCollection("items");
+        DBCollection collection = db.getCollection("companies");
         System.out.println("connected to items");
 
         BasicDBObject whereQuery = new BasicDBObject();
