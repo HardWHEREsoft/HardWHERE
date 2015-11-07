@@ -26,38 +26,39 @@
 <section class="div_padding">
     <div class="container">
         <div class="row">
-            <form class="form" method="get">
+            <form class="form" method="get" action="search">
             <!--    This is the filter        -->
             <div id="filter" class="col-md-2 col-xs-4">
                   <a><h4>Brand</h4></a>
                   <div class="row show-hide-div">
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> AGL Tiles</div>
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> Exxaro Tiles</a></div>
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> Johnson Tiles</a></div>
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> Kajaria Tiles</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemBrand" type="checkbox" value="AGL"> AGL</div>
+                    <div class="col-md-12 col-xs-12"><input name="itemBrand" type="checkbox"> Exxaro Tiles</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemBrand" type="checkbox"> Johnson Tiles</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemBrand" type="checkbox"> Kajaria Tiles</a></div>
                   </div>
                 
                 <hr>
                   <a><h4>Size</h4></a>
                   <div class="row show-hide-div2" hidden="hidden">
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> 200 X 1200 (mm)</a></div>
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> 300 X 300 (mm)</a></div>
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> 400 X 800 (mm)</a></div>
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> 445 X 445 (mm)</a></div>
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> 600 X 1200 (mm)</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemSize" type="checkbox" value="200x200"> 200 X 1200 (mm)</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemSize" type="checkbox" value="300x300"> 300 X 300 (mm)</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemSize" type="checkbox" value="150x150"> 150 x 150 (mm)</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemSize" type="checkbox" value="445x445"> 445 X 445 (mm)</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemSize" type="checkbox" value="600x1200"> 600 X 1200 (mm)</a></div>
                   </div>
                 
                 <hr>
-                  <a><h4>Type</h4></a>
+                  <a><h4>Thickness</h4></a>
                   <div class="row show-hide-div3" hidden="hidden">
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> Ceramic Tiles</a></div>
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> Digital Tiles</a></div>
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> Glazed Tiles</a></div>
-                    <div class="col-md-12 col-xs-12"><input type="checkbox"> Vitrified Tiles</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemThickness" type="checkbox" value="25mm"> 25mm</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemThickness" type="checkbox" value="75mm"> 75mm</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemThickness" type="checkbox" value="50mm"> 50mm</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemThickness" type="checkbox" value="60mm"> 60mm</a></div>
                   </div>
                 <hr>
-                
-                <button class="btn btn-primary btn-block"><a href="search?item_Type=Material&itemModel=Tile=">Filter</a></button>
+                <input type="submit" class="btn btn-primary" value="Filter">
+                <input type="hidden" name="item_Type" value="Material"/>
+                <input type="hidden" name="itemModel" value="Tile"/>
                 
             </div>
                 
@@ -85,18 +86,18 @@
                             out.println("<img class=\"img-responsive\" src=\"img/test/3D-Morning-Dew-HD-Wallpaper.jpg\">");
                             out.println("<p>Details</p>");
                             out.println("<p>Price:"+item_pojo.getItem_Price()+"</p>");
-                            out.println("<button class=\"btn\"><a href=\"item?Company_ID="+item_pojo.getCompany_id()+"\">MORE INFO</a></button>");
+                            out.println("<button class=\"btn\"><a href=\"item?item_ID="+item_pojo.getItem_ID()+"\">MORE INFO</a></button>");
                             out.println("</div>");
                         }
 
                     %>
                     
-                    <div class="itemDisplay col-md-3 col-xs-6">
-                        <img class="img-responsive" src="img/test/3.jpg">
-                        <p>Details</p>
-                        <p>Price</p>
-                        <button class="btn"><a href="item?Item_ID=">MORE INFO</a> </button>
-                    </div>
+                    <%--<div class="itemDisplay col-md-3 col-xs-6">--%>
+                        <%--<img class="img-responsive" src="img/test/3.jpg">--%>
+                        <%--<p>Details</p>--%>
+                        <%--<p>Price</p>--%>
+                        <%--<button class="btn"><a href="item?Item_ID=">MORE INFO</a> </button>--%>
+                    <%--</div>--%>
                     
                     <%--<div class="itemDisplay col-md-3 col-xs-6">--%>
                         <%--<img class="img-responsive" src="img/test/3D-Wallpaper-of-Lake-and-Moon-Wallpaper-Backgrounds-HD-Wallpapers.jpg">--%>

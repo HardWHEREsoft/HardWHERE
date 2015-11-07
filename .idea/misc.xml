@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
+< HEAD>
+
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
-=======
+  =======
   <component name="CppTools.Loader" reportImplicitCastToBool="false" reportNameReferencedOnce="false" version="3" compilerSelect="AUTO" />
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
   <component name="IdProvider" IDEtalkID="AD13F26F836885A9586CD1C9487FA169" />
->>>>>>> origin/master
+  >>>>>>> origin/master
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -18,7 +19,8 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
+
+</HEAD>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />

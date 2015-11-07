@@ -11,14 +11,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
-<%
-
-  Companies companies=new Companies();
-
-  companies=new itemDetails().getItemsByrPrice(request.getParameter("Company_ID"));
-
-
-%>
 <head>
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -56,7 +48,7 @@
         var marker = new google.maps.Marker({ position: myLatlng, map: map, draggable:true, title:"Drag me!"});}
       google.maps.event.addDomListener(window, 'load', initialize);
     }
-    homeMap(<%=companies.getAddress3()%>);
+    homeMap('Nawagamuwa');
   </script>
 </head>
 <body id="page-top" class="index">
@@ -74,9 +66,13 @@
           <div class="col-md-4">
             <table class="table table-striped">
               <tbody>
-              <tr><td>Shop Name:<%=companies.getShop_name()%></td></tr>
-              <tr><td>Address:<%=companies.getAddress3()%></td></tr>
-              <tr><td>Contact:<%=companies.getTelephone()%></td></tr>
+              <tr><td>Shop Name:N & A Construction</td></tr>
+              <tr><td>Address:No. 81B, Awissawella Road, Nawagamuwa, Ranala, Sri Lanka.</td></tr>
+              <tr><td>Contact:<div id="phone-icon-00000295" style="width:120px;height:35px;background:url(https://demo.sdp.hsenidmobile.com/icon-server/img/ajax-loader.gif) no-repeat center center">
+                <script src="https://demo.sdp.hsenidmobile.com/icon-server/script-loader.js?componentId=104&divId=phone-icon-00000295"></script>
+              </div>
+              </td></tr>
+              <tr><td>Email:info@naengineeringservices.com</td></tr>
               </tbody>
             </table>
           </div>
@@ -85,9 +81,10 @@
           </div>
         </div>
 
-        <div class="row  text-center" style="margin-bottom:30px margin-top:30px">
-          <button id="callBtn" class="btn btn-default">Call</button>
-        </div>
+        <%--<div class="row  text-center" style="margin-bottom:30px margin-top:30px">--%>
+          <%--<button id="callBtn" class="btn btn-default">Call</button>--%>
+        <%--</div>--%>
+
 
       </div>
         </div>
