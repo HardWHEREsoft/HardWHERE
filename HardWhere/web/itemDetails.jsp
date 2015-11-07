@@ -48,7 +48,7 @@
         var marker = new google.maps.Marker({ position: myLatlng, map: map, draggable:true, title:"Drag me!"});}
       google.maps.event.addDomListener(window, 'load', initialize);
     }
-    homeMap('Nawagamuwa');
+    homeMap('Nawala Road, Narahenpita, Colombo 05');
   </script>
 </head>
 <body id="page-top" class="index">
@@ -66,13 +66,22 @@
           <div class="col-md-4">
             <table class="table table-striped">
               <tbody>
-              <tr><td>Shop Name:N & A Construction</td></tr>
-              <tr><td>Address:No. 81B, Awissawella Road, Nawagamuwa, Ranala, Sri Lanka.</td></tr>
+              <tr><td>Shop Name: Ranjith Terrazzo (Pvt) Ltd</td></tr>
+              <tr><td>Address:177 A, Nawala Road, Narahenpita, Colombo 05, Sri lanka </td></tr>
               <tr><td>Contact:<div id="phone-icon-00000295" style="width:120px;height:35px;background:url(https://demo.sdp.hsenidmobile.com/icon-server/img/ajax-loader.gif) no-repeat center center">
                 <script src="https://demo.sdp.hsenidmobile.com/icon-server/script-loader.js?componentId=104&divId=phone-icon-00000295"></script>
               </div>
               </td></tr>
-              <tr><td>Email:info@naengineeringservices.com</td></tr>
+              <tr><td>Email:exports@presstona.com</td></tr>
+              <tr><td>Description: With 25 years of experience in terrazzo field, we are providing professional flooring services and support our clients with the knowledge,
+                experience, quality workmanship, innovative products and fair pricing.
+                Ranjith terrazzo is the market leader in sri lanka for in situ terrazzo ,
+                precast terrazzo and cement flooring. The chairman and managing director,
+                Mr. Ranjith Silva with his lifelong experience dealing with terrazzo has
+                improved and expanded the business by starting the sister company “Presstona tiles lanka (Pvt) Ltd” in 2004.
+                As a “monopoly” product Presstona produce the heavy duty homogenous precast cement and terrazzo pressed
+                tiles to the srilankn market by Italian high tech machines and create a growing demand in locally and over sears.
+              </td></tr>
               </tbody>
             </table>
           </div>

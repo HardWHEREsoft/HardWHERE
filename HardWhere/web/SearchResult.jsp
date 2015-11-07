@@ -32,9 +32,8 @@
                   <a><h4>Brand</h4></a>
                   <div class="row show-hide-div">
                     <div class="col-md-12 col-xs-12"><input name="itemBrand" type="checkbox" value="AGL"> AGL</div>
-                    <div class="col-md-12 col-xs-12"><input name="itemBrand" type="checkbox"> Exxaro Tiles</a></div>
-                    <div class="col-md-12 col-xs-12"><input name="itemBrand" type="checkbox"> Johnson Tiles</a></div>
-                    <div class="col-md-12 col-xs-12"><input name="itemBrand" type="checkbox"> Kajaria Tiles</a></div>
+                    <div class="col-md-12 col-xs-12"><input name="itemBrand" type="checkbox">Lanka_Tiles</div>
+                    <div class="col-md-12 col-xs-12"><input name="itemBrand" type="checkbox">Royal_Ceramic</div>
                   </div>
                 
                 <hr>
@@ -83,8 +82,8 @@
                         for(int i=0;i<arrayList.size();i++){
                             item_pojo=arrayList.get(i);
                             out.println("<div class=\"itemDisplay col-md-3 col-xs-6\">");
-                            out.println("<img class=\"img-responsive\" src=\"img/test/3D-Morning-Dew-HD-Wallpaper.jpg\">");
-                            out.println("<p>Details</p>");
+                            out.println("<img class=\"img-responsive\" src=\"/img/test/"+item_pojo.getItem_Image()+"\">");
+                            out.println("<p>Details:"+item_pojo.getItem_Brand()+"</p>");
                             out.println("<p>Price:"+item_pojo.getItem_Price()+"</p>");
                             out.println("<button class=\"btn\"><a href=\"item?item_ID="+item_pojo.getItem_ID()+"\">MORE INFO</a></button>");
                             out.println("</div>");
